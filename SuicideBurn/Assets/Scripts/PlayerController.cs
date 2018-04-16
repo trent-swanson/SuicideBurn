@@ -34,17 +34,25 @@ public class PlayerController : MonoBehaviour {
     {
 		if (ifMoving == false && (touchControls.SwipeRight == true || Input.GetKeyDown(KeyCode.D)))
         {
-            if (transform.position.x < 0) {
+            if (transform.position.x < 0)
+            {
                 StartCoroutine(MoveToPosition(new Vector3(0,0,0), moveSpeed));
-            } else if (transform.position.x < 2.5) {
+            }
+            else if (transform.position.x < 2.5)
+            {
                 StartCoroutine(MoveToPosition(new Vector3(2.5f,0,0), moveSpeed));
             }
         }
-        if (ifMoving == false && transform.position.x  > -2.5 && (touchControls.SwipeLeft == true || Input.GetKeyDown(KeyCode.A)))
+        if (ifMoving == false && (touchControls.SwipeLeft == true || Input.GetKeyDown(KeyCode.A)))
         {
-            Vector3 pos = new Vector3(0.0f, 0.0f, 0.0f);
-            pos.x += -2.5f;
-            StartCoroutine(MoveToPosition(pos, moveSpeed));
+            if (transform.position.x > 0)
+            {
+                StartCoroutine(MoveToPosition(new Vector3(0, 0, 0), moveSpeed));
+            }
+            else if (transform.position.x > -2.5)
+            {
+                StartCoroutine(MoveToPosition(new Vector3(-2.5f, 0, 0), moveSpeed));
+            }
         }
         if (ifMoving == false && Input.GetKeyDown(KeyCode.W) || touchControls.Tap)
         {
