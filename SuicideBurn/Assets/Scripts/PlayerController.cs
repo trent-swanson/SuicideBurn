@@ -22,6 +22,9 @@ public class PlayerController : MonoBehaviour {
     [SerializeField]
     [Tooltip("Player break speed.")]
     public float breakSpeed;
+    // Acceleration speed
+    [SerializeField]
+    [Tooltip("Acceleration speed.")]
     public float accelSpeed;
 
 	// Use this for initialization
