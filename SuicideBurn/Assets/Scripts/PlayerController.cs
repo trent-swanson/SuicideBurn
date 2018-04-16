@@ -32,27 +32,13 @@ public class PlayerController : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-		if (ifMoving == false && (touchControls.SwipeRight == true || Input.GetKeyDown(KeyCode.D)))
+		if (ifMoving == false && transform.position.x < 2.5f && (touchControls.SwipeRight == true || Input.GetKeyDown(KeyCode.D)))
         {
-            if (transform.position.x < 0)
-            {
-                StartCoroutine(MoveToPosition(new Vector3(0,0,0), moveSpeed));
-            }
-            else if (transform.position.x < 2.5)
-            {
-                StartCoroutine(MoveToPosition(new Vector3(2.5f,0,0), moveSpeed));
-            }
+            StartCoroutine(MoveToPosition(new Vector3(transform.position.x + 2.5f, transform.position.y, transform.position.z), moveSpeed));
         }
-        if (ifMoving == false && (touchControls.SwipeLeft == true || Input.GetKeyDown(KeyCode.A)))
+        if (ifMoving == false && transform.position.x > -2.5f && (touchControls.SwipeLeft == true || Input.GetKeyDown(KeyCode.A)))
         {
-            if (transform.position.x > 0)
-            {
-                StartCoroutine(MoveToPosition(new Vector3(0, 0, 0), moveSpeed));
-            }
-            else if (transform.position.x > -2.5)
-            {
-                StartCoroutine(MoveToPosition(new Vector3(-2.5f, 0, 0), moveSpeed));
-            }
+            StartCoroutine(MoveToPosition(new Vector3(transform.position.x - 2.5f, transform.position.y, transform.position.z), moveSpeed));
         }
         if (ifMoving == false && Input.GetKeyDown(KeyCode.W) || touchControls.Tap)
         {
