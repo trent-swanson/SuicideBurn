@@ -32,13 +32,13 @@ public class PlayerController : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-		if (ifMoving == false && transform.position.x < 2.5 && (touchControls.SwipeRight == true || Input.GetKeyDown(KeyCode.A)))
+		if (ifMoving == false && transform.position.x < 2.5 && (touchControls.SwipeRight == true || Input.GetKeyDown(KeyCode.D)))
         {
             Vector3 pos = new Vector3(0.0f, 0.0f, 0.0f);
             pos.x += 2.5f;
             StartCoroutine(MoveToPosition(pos, moveSpeed));
         }
-        if (ifMoving == false && transform.position.x  > -2.5 && (touchControls.SwipeLeft == true || Input.GetKeyDown(KeyCode.D)))
+        if (ifMoving == false && transform.position.x  > -2.5 && (touchControls.SwipeLeft == true || Input.GetKeyDown(KeyCode.A)))
         {
             Vector3 pos = new Vector3(0.0f, 0.0f, 0.0f);
             pos.x += -2.5f;
