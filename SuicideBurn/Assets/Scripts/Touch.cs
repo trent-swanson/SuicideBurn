@@ -5,7 +5,8 @@ using UnityEngine;
 public class Touch : MonoBehaviour {
 
 	public float deadzone = 125f;
-	bool tap, swipeLeft, swipeRight, swipeUp, swipeDown;
+    public float holdTime = 0.1f;
+	bool tap, swipeLeft, swipeRight, swipeUp, swipeDown, hold;
 	bool isDragging = false;
 	Vector2 startTouch, swipeDelta;
 
@@ -15,6 +16,9 @@ public class Touch : MonoBehaviour {
 	public bool SwipeUp { get { return swipeUp; } }
 	public bool SwipeDown { get { return swipeDown; } }
     public bool Tap { get { return tap; } }
+    public bool Hold { get { return hold; } }
+
+    private float currentHoldTime;
 
     void Update() {
 		tap = swipeLeft = swipeRight = swipeUp = swipeDown = false;
@@ -27,7 +31,14 @@ public class Touch : MonoBehaviour {
 		} else if (Input.GetMouseButtonUp(0)) {
 			isDragging = false;
 			Reset();
-		}
+            hold = false;
+            currentHoldTime = 0f;
+		} else if (Input.GetMouseButton(0)) {
+            currentHoldTime += Time.deltaTime;
+
+            if (currentHoldTime >= holdTime)
+                hold = true;
+        }
 
 		//Mobile Inputs
 		if(Input.touches.Length != 0) {
@@ -51,6 +62,9 @@ public class Touch : MonoBehaviour {
 			}
 		}
 
+        if (hold)
+            return;
+
 		//Crossed Deadzone?
 		if (swipeDelta.magnitude > deadzone) {
 			//Direction?
@@ -71,7 +85,7 @@ public class Touch : MonoBehaviour {
 			}
 
 			Reset();
-		}
+        }
 	}
 
 	void Reset() {
