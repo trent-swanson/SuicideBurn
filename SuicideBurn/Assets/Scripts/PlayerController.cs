@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour {
     [SerializeField]
     [Tooltip("Player movement speed.")]
     public float moveSpeed;
+    public float lanePos;
 
 	// Use this for initialization
 	void Start ()
@@ -34,11 +35,11 @@ public class PlayerController : MonoBehaviour {
     {
 		if (ifMoving == false && transform.position.x < 2.5f && (touchControls.SwipeRight == true || Input.GetKeyDown(KeyCode.D)))
         {
-            StartCoroutine(MoveToPosition(new Vector3(transform.position.x + 2.5f, transform.position.y, transform.position.z), moveSpeed));
+            StartCoroutine(MoveToPosition(new Vector3(transform.position.x + lanePos, transform.position.y, transform.position.z), moveSpeed));
         }
         if (ifMoving == false && transform.position.x > -2.5f && (touchControls.SwipeLeft == true || Input.GetKeyDown(KeyCode.A)))
         {
-            StartCoroutine(MoveToPosition(new Vector3(transform.position.x - 2.5f, transform.position.y, transform.position.z), moveSpeed));
+            StartCoroutine(MoveToPosition(new Vector3(transform.position.x - lanePos, transform.position.y, transform.position.z), moveSpeed));
         }
         if (ifMoving == false && Input.GetKeyDown(KeyCode.W) || touchControls.Tap)
         {
