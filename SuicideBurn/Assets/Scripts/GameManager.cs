@@ -2,21 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameManager : MonoBehaviour {
+public static class GameManager {
 
-	public GameObject pausePanel;
-
-	bool isPaused = false;
-
-	public void Pause() {
-		isPaused = !isPaused;
-		if (isPaused)
-			pausePanel.SetActive(true);
-		else
-			pausePanel.SetActive(false);
-	}
-
-	public void Exit() {
-
-	}
+	public static int personCount;
+	public static int score;
 }
