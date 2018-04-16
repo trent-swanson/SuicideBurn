@@ -8,8 +8,8 @@ public class PlayerController : MonoBehaviour {
     private GameObject gameManager;
     // Get reference to TouchControls
     private Touch touchControls;
-    // Get instance of rigidbody
-    private Rigidbody rb;
+    // Get instance of ScoreManager
+    private ScoreManager scoreManager;
 
     private bool ifMoving = false;
 
@@ -34,8 +34,8 @@ public class PlayerController : MonoBehaviour {
         gameManager = GameObject.FindGameObjectWithTag("GameController");
         // Get reference to TouchControls
         touchControls = gameManager.GetComponent<Touch>();
-        // Get instance of rigidbody
-        rb = GetComponent<Rigidbody>();
+        // Get instance of ScoreManager
+        scoreManager = gameManager.GetComponent<ScoreManager>();
     }
 	
 	// Update is called once per frame
@@ -52,14 +52,27 @@ public class PlayerController : MonoBehaviour {
             StartCoroutine(MoveToPosition(new Vector3(transform.position.x - lanePos, transform.position.y, transform.position.z), moveSpeed));
         }
         // If the player breaks
-        if (ifMoving == false && Input.GetKeyDown(KeyCode.W) || touchControls.Tap)
+        if (ifMoving == false && transform.position.y < 2.0f && (Input.GetKeyDown(KeyCode.W) || touchControls.Tap))
         {
-            StartCoroutine(MoveToPosition(new Vector3(transform.position.x, transform.position.y + 0.5f, transform.position.z), breakSpeed));
+            StartCoroutine(MoveToPosition(new Vector3(transform.position.x, 2.0f, transform.position.z), breakSpeed));
         }
         // Natural accel
         else
         {
-            StartCoroutine(MoveToPosition(new Vector3(transform.position.x, transform.position.y - 1.0f, transform.position.z), accelSpeed));
+            if (transform.position.y > 0.5f)
+            {
+                StartCoroutine(AccelToPosition(new Vector3(transform.position.x, transform.position.y - 1.0f, transform.position.z), accelSpeed));
+            }
+        }
+    }
+
+    // If a collision is made
+    void OnCollisionEnter(Collision collision)
+    {
+        // If collision is made with "Coin"
+        if (collision.gameObject.tag == "Coin")
+        {
+            scoreManager.playerScore += 10.0f;
         }
     }
 
@@ -75,5 +88,18 @@ public class PlayerController : MonoBehaviour {
             yield return null;
         }
         ifMoving = false;
+    }
+
+    public IEnumerator AccelToPosition(Vector3 position, float timeToMove)
+    {
+        ifMoving = false;
+        Vector3 currentPos = transform.position;
+        float t = 0f;
+        while (t < 1)
+        {
+            t += Time.deltaTime / timeToMove;
+            transform.position = Vector3.Lerp(currentPos, position, t);
+            yield return null;
+        }
     }
 }
