@@ -8,8 +8,8 @@ public class PlayerController : MonoBehaviour {
     private GameObject gameManager;
     // Get reference to TouchControls
     private Touch touchControls;
-    // Get instance of rigidbody
-    private Rigidbody rb;
+    // Get instance of ScoreManager
+    private ScoreManager scoreManager;
 
     private bool ifMoving = false;
 
@@ -34,8 +34,8 @@ public class PlayerController : MonoBehaviour {
         gameManager = GameObject.FindGameObjectWithTag("GameController");
         // Get reference to TouchControls
         touchControls = gameManager.GetComponent<Touch>();
-        // Get instance of rigidbody
-        rb = GetComponent<Rigidbody>();
+        // Get instance of ScoreManager
+        scoreManager = gameManager.GetComponent<ScoreManager>();
     }
 	
 	// Update is called once per frame
@@ -63,6 +63,16 @@ public class PlayerController : MonoBehaviour {
             {
                 StartCoroutine(AccelToPosition(new Vector3(transform.position.x, transform.position.y - 1.0f, transform.position.z), accelSpeed));
             }
+        }
+    }
+
+    // If a collision is made
+    void OnCollisionEnter(Collision collision)
+    {
+        // If collision is made with "Coin"
+        if (collision.gameObject.tag == "Coin")
+        {
+            scoreManager.playerScore += 10.0f;
         }
     }
 
