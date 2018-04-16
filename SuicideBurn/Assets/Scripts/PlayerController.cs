@@ -34,8 +34,6 @@ public class PlayerController : MonoBehaviour {
         gameManager = GameObject.FindGameObjectWithTag("GameController");
         // Get reference to TouchControls
         touchControls = gameManager.GetComponent<Touch>();
-        // Get instance of rigidbody
-        rb = GetComponent<Rigidbody>();
     }
 	
 	// Update is called once per frame

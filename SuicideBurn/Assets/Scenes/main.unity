@@ -422,6 +422,22 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 105a7f487e2538d45b0ac0dd650c90ed, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1322466306 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1598210656271722, guid: 57ceea1d8bcc1e54f9a0142322480fdb,
+    type: 2}
+  m_PrefabInternal: {fileID: 574400618}
+--- !u!114 &1322466307
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1322466306}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76787fcfc6f4bf8408bc139cbe29eea2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1431544057 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1468032398687676, guid: 105a7f487e2538d45b0ac0dd650c90ed,
@@ -459,8 +475,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 0.2
-  breakSpeed: 0.2
-  accelSpeed: 2
+  breakSpeed: 1
+  accelSpeed: 1
   lanePos: 2
 --- !u!23 &1669619402
 MeshRenderer:
