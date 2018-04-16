@@ -52,14 +52,17 @@ public class PlayerController : MonoBehaviour {
             StartCoroutine(MoveToPosition(new Vector3(transform.position.x - lanePos, transform.position.y, transform.position.z), moveSpeed));
         }
         // If the player breaks
-        if (ifMoving == false && Input.GetKeyDown(KeyCode.W) || touchControls.Tap)
+        if (ifMoving == false && transform.position.y < 2.0f && (Input.GetKeyDown(KeyCode.W) || touchControls.Tap))
         {
             StartCoroutine(MoveToPosition(new Vector3(transform.position.x, transform.position.y + 0.5f, transform.position.z), breakSpeed));
         }
         // Natural accel
         else
         {
-            StartCoroutine(MoveToPosition(new Vector3(transform.position.x, transform.position.y - 1.0f, transform.position.z), accelSpeed));
+            if (transform.position.y > 0.5f)
+            {
+                StartCoroutine(MoveToPosition(new Vector3(transform.position.x, transform.position.y - 1.0f, transform.position.z), accelSpeed));
+            }
         }
     }
 
