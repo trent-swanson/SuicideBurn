@@ -18,6 +18,11 @@ public class PlayerController : MonoBehaviour {
     [Tooltip("Player movement speed.")]
     public float moveSpeed;
     public float lanePos;
+    // Player break speed
+    [SerializeField]
+    [Tooltip("Player break speed.")]
+    public float breakSpeed;
+    public float accelSpeed;
 
 	// Use this for initialization
 	void Start ()
@@ -33,17 +38,25 @@ public class PlayerController : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
+        // If the player swipes right
 		if (ifMoving == false && transform.position.x < 2.5f && (touchControls.SwipeRight == true || Input.GetKeyDown(KeyCode.D)))
         {
             StartCoroutine(MoveToPosition(new Vector3(transform.position.x + lanePos, transform.position.y, transform.position.z), moveSpeed));
         }
+        // If the player swipes left
         if (ifMoving == false && transform.position.x > -2.5f && (touchControls.SwipeLeft == true || Input.GetKeyDown(KeyCode.A)))
         {
             StartCoroutine(MoveToPosition(new Vector3(transform.position.x - lanePos, transform.position.y, transform.position.z), moveSpeed));
         }
+        // If the player breaks
         if (ifMoving == false && Input.GetKeyDown(KeyCode.W) || touchControls.Tap)
         {
-            //break
+            StartCoroutine(MoveToPosition(new Vector3(transform.position.x, transform.position.y + 0.5f, transform.position.z), breakSpeed));
+        }
+        // Natural accel
+        else
+        {
+            StartCoroutine(MoveToPosition(new Vector3(transform.position.x, transform.position.y - 1.0f, transform.position.z), accelSpeed));
         }
     }
 
