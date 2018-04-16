@@ -13,9 +13,10 @@ public class Touch : MonoBehaviour {
 	public bool SwipeLeft { get { return swipeLeft; } }
 	public bool SwipeRight { get { return swipeRight; } }
 	public bool SwipeUp { get { return swipeUp; } }
-	public bool SwipeDown { get { return swipeDown; } } 
+	public bool SwipeDown { get { return swipeDown; } }
+    public bool Tap { get { return tap; } }
 
-	void Update() {
+    void Update() {
 		tap = swipeLeft = swipeRight = swipeUp = swipeDown = false;
 
 		//Standalone Inputs
