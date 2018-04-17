@@ -4,20 +4,23 @@ using UnityEngine;
 
 public class CameraMove : MonoBehaviour {
     public float holdTime;
-    public float maxYPosition;
-    public float moveTime;
-    public AnimationCurve moveCurve;
+    public float minYShift;
+    public float breakTime;
+    public float accelerateTime;
+    public AnimationCurve breakCurve;
+    public AnimationCurve accelerateCurve;
 
     private Touch touch;
-    private float originalYPosition;
     private float currentHoldTime;
 
     private bool isMoving;
     private bool hasMoved;
 
+    private float originalYPos;
+
     private void Start() {
         touch = GameObject.FindGameObjectWithTag("GameController").GetComponent<Touch>();
-        originalYPosition = transform.position.y;
+        originalYPos = transform.position.y;
     }
 
     private void Update() {
@@ -31,7 +34,7 @@ public class CameraMove : MonoBehaviour {
             if(currentHoldTime >= holdTime && hasMoved == false) {
                 hasMoved = true;
                 StopAllCoroutines();
-                StartCoroutine(MoveCam(new Vector3(transform.position.x, maxYPosition, transform.position.z)));
+                StartCoroutine(MoveCam(new Vector3(transform.position.x, transform.position.y + minYShift, transform.position.z), breakTime, breakCurve));
                 currentHoldTime = 0f;
             }
         } else {
@@ -40,19 +43,19 @@ public class CameraMove : MonoBehaviour {
             if (hasMoved) {
                 hasMoved = false;
                 StopAllCoroutines();
-                StartCoroutine(MoveCam(new Vector3(transform.position.x, originalYPosition, transform.position.z)));
+                StartCoroutine(MoveCam(new Vector3(transform.position.x, originalYPos, transform.position.z), accelerateTime, accelerateCurve));
             }
         }
     }
 
-    private IEnumerator MoveCam(Vector3 position) {
+    private IEnumerator MoveCam(Vector3 position, float lerpTIme, AnimationCurve curve) {
         float t = 0f;
         Vector3 startPostion = transform.position;
 
-        while (t <= moveTime) {
+        while (t <= lerpTIme) {
             t += Time.deltaTime;
 
-            transform.position = Vector3.LerpUnclamped(startPostion, position, moveCurve.Evaluate(t / moveTime));
+            transform.position = Vector3.LerpUnclamped(startPostion, position, curve.Evaluate(t / breakTime));
 
             yield return null;
         }
