@@ -57,15 +57,15 @@ public class CharacterController : MonoBehaviour {
     }
 	
 	void Update () {
-        CheckHeld();
-
         //move left & right
 		if (ifMoving == false && transform.position.x < lanePos && (touchControls.SwipeRight == true || Input.GetKeyDown(KeyCode.D))) {
             StartCoroutine(MoveToPosition(new Vector3(transform.position.x + lanePos, transform.position.y, transform.position.z), moveSpeed));
         }
-        if (ifMoving == false && transform.position.x > -lanePos && (touchControls.SwipeLeft == true || Input.GetKeyDown(KeyCode.A))) {
+        else if (ifMoving == false && transform.position.x > -lanePos && (touchControls.SwipeLeft == true || Input.GetKeyDown(KeyCode.A))) {
             StartCoroutine(MoveToPosition(new Vector3(transform.position.x - lanePos, transform.position.y, transform.position.z), moveSpeed));
         }
+
+        CheckHeld();
 
         //break & accelorate
         if (touchControls.Hold && !dead && GameManager.fuel > 0) {
@@ -111,7 +111,7 @@ public class CharacterController : MonoBehaviour {
             if(currentHoldTime >= holdTime && hasMoved == false) {
                 hasMoved = true;
                 StopAllCoroutines();
-                StartCoroutine(BreakMove(new Vector3(transform.position.x, minYPos, transform.position.z), breakTime, breakCurve));
+                StartCoroutine(BreakMove(minYPos, breakTime, breakCurve));
                 currentHoldTime = 0f;
             }
         } else {
@@ -119,23 +119,24 @@ public class CharacterController : MonoBehaviour {
 
             if (hasMoved) {
                 hasMoved = false;
-                StopAllCoroutines();
-                StartCoroutine(BreakMove(new Vector3(transform.position.x, originalYPos, transform.position.z), accelerateTime, accelerateCurve));
+                StartCoroutine(BreakMove(originalYPos, accelerateTime, accelerateCurve));
             }
         }
     }
 
-    private IEnumerator BreakMove(Vector3 position, float lerpTIme, AnimationCurve curve) {
+    private IEnumerator BreakMove(float position, float lerpTime, AnimationCurve curve) {
         float t = 0f;
-        Vector3 startPostion = transform.position;
+        float startPostion = transform.position.y;
+        float currentPosition = 0f;
 
-        while (t <= lerpTIme) {
+        while (t <= lerpTime) {
             t += Time.deltaTime;
-
-            transform.position = Vector3.LerpUnclamped(startPostion, position, curve.Evaluate(t / breakTime));
-
+            currentPosition = Mathf.LerpUnclamped(startPostion, position, curve.Evaluate(t / lerpTime));
+            transform.position = new Vector3(transform.position.x, currentPosition, transform.position.z);
             yield return null;
         }
+
+        Debug.Log("Stop break");
     }
 
     public void AirExplode() {
@@ -143,7 +144,6 @@ public class CharacterController : MonoBehaviour {
         airExplosion.SetActive(true);
         podMesh.SetActive(false);
         reenteryEffects.SetActive(false);
-
     }
 
     public void Die() {
