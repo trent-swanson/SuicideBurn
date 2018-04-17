@@ -59,13 +59,14 @@ public class CharacterController : MonoBehaviour {
     }
 	
 	void Update () {
-        CheckHeld();
+        if (!dead)
+            CheckHeld();
 
         //move left & right
-		if (ifMoving == false && transform.position.x < lanePos && (touchControls.SwipeRight == true || Input.GetKeyDown(KeyCode.D))) {
+		if (!dead && ifMoving == false && transform.position.x < lanePos && (touchControls.SwipeRight == true || Input.GetKeyDown(KeyCode.D))) {
             StartCoroutine(MoveToPosition(new Vector3(transform.position.x + lanePos, transform.position.y, transform.position.z), moveSpeed));
         }
-        if (ifMoving == false && transform.position.x > -lanePos && (touchControls.SwipeLeft == true || Input.GetKeyDown(KeyCode.A))) {
+        if (!dead && ifMoving == false && transform.position.x > -lanePos && (touchControls.SwipeLeft == true || Input.GetKeyDown(KeyCode.A))) {
             StartCoroutine(MoveToPosition(new Vector3(transform.position.x - lanePos, transform.position.y, transform.position.z), moveSpeed));
         }
 
@@ -165,5 +166,9 @@ public class CharacterController : MonoBehaviour {
     IEnumerator Die() {
         yield return new WaitForSeconds(5);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void DisableInput() {
+        dead = true;
     }
 }
