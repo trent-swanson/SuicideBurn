@@ -8,8 +8,6 @@ public class PlayerController : MonoBehaviour {
     private GameObject gameManager;
     // Get reference to TouchControls
     private Touch touchControls;
-    // Get instance of ScoreManager
-    private ScoreManager scoreManager;
     // Get instance of GameController
     private GameController gameController;
 
@@ -38,8 +36,6 @@ public class PlayerController : MonoBehaviour {
         gameManager = GameObject.FindGameObjectWithTag("GameController");
         // Get reference to TouchControls
         touchControls = gameManager.GetComponent<Touch>();
-        // Get instance of ScoreManager
-        scoreManager = gameManager.GetComponent<ScoreManager>();
         // Get instance of GameController
         gameController = gameManager.GetComponent<GameController>();
     }
@@ -78,7 +74,7 @@ public class PlayerController : MonoBehaviour {
         // If collision is made with "Coin"
         if (collision.gameObject.tag == "Coin")
         {
-            scoreManager.playerScore += 10.0f;
+            GameManager.score += 10;
         }
 
         // If collision is made with "Laser"

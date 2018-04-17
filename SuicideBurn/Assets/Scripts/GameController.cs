@@ -18,9 +18,8 @@ public class GameController : MonoBehaviour {
 			pausePanel.SetActive(false);
 	}
 
-    public void GameOver()
-    {
-            gameoverPanel.SetActive(true);
+    public void GameOver() {
+        gameoverPanel.SetActive(true);
     }
 
 	public void Exit() {
