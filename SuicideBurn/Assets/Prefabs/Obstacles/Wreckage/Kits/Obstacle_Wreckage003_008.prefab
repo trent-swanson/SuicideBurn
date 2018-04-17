@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4596363026022948}
   - component: {fileID: 33794447095017582}
   - component: {fileID: 23266864912747614}
-  - component: {fileID: 65100444729543436}
+  - component: {fileID: 95194872055847544}
   m_Layer: 0
   m_Name: Obstacle_Wreckage003_008
   m_TagString: Untagged
@@ -83,15 +83,20 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1341869292550906}
   m_Mesh: {fileID: 4300000, guid: 74447b6bc5e5b8b4f90602cddf6d5e17, type: 3}
---- !u!65 &65100444729543436
-BoxCollider:
+--- !u!95 &95194872055847544
+Animator:
+  serializedVersion: 3
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1341869292550906}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.08973694, y: 0.027213745, z: 0.21505493}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Avatar: {fileID: 9000000, guid: 74447b6bc5e5b8b4f90602cddf6d5e17, type: 3}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1

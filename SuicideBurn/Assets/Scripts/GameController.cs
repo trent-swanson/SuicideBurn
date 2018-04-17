@@ -7,9 +7,21 @@ public class GameController : MonoBehaviour {
 
 	public GameObject pausePanel;
     public GameObject gameoverPanel;
+	public Slider fuelSlider;
 
 	bool isPaused = false;
     public bool isDead = false;
+
+	 void OnEnable()
+    {
+        GameManager.OnUpdateFuel += UpdateFuel;
+    }
+    
+    
+    void OnDisable()
+    {
+        GameManager.OnUpdateFuel -= UpdateFuel;
+    }
 
     public void Pause() {
 		isPaused = !isPaused;
@@ -25,5 +37,9 @@ public class GameController : MonoBehaviour {
 
 	public void Exit() {
 
+	}
+
+	void UpdateFuel() {
+		fuelSlider.value = GameManager.fuel;
 	}
 }

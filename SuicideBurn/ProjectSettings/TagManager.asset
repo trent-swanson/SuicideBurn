@@ -7,6 +7,7 @@ TagManager:
   - Destroyer
   - Coin
   - Fuel
+  - SpeedHolder
   layers:
   - Default
   - TransparentFX

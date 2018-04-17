@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4591379879152866}
   - component: {fileID: 33418761146494038}
   - component: {fileID: 23706152206353060}
-  - component: {fileID: 65712011234031314}
+  - component: {fileID: 95815101010374554}
   m_Layer: 0
   m_Name: Obstacle_Wreckage001_003
   m_TagString: Untagged
@@ -36,7 +36,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1195894437385820}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 15.489392, y: 1.7201362, z: -0.2648468}
+  m_LocalPosition: {x: 0.20523548, y: 3.6864424, z: -6.3193717}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -83,15 +83,20 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1195894437385820}
   m_Mesh: {fileID: 4300000, guid: 030b403d2e6902d43986fadf515ac7df, type: 3}
---- !u!65 &65712011234031314
-BoxCollider:
+--- !u!95 &95815101010374554
+Animator:
+  serializedVersion: 3
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1195894437385820}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.04426645, y: 0.47296122, z: 0.039068297}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Avatar: {fileID: 9000000, guid: 030b403d2e6902d43986fadf515ac7df, type: 3}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1

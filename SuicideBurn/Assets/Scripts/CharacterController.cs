@@ -33,6 +33,7 @@ public class CharacterController : MonoBehaviour {
     [Space]
     [Space]
     [Header("Break Movement")]
+    public float fuelCost;
     public float holdTime;
     public float minYShift;
     public float breakTime;
@@ -46,6 +47,7 @@ public class CharacterController : MonoBehaviour {
     bool dead = false;
 
 	void Start () {
+        GameManager.fuel = 1000;
         gameManager = GameObject.FindGameObjectWithTag("GameController");
         cameraObject = GameObject.FindGameObjectWithTag("MainCamera");
         touchControls = gameManager.GetComponent<Touch>();
@@ -66,7 +68,8 @@ public class CharacterController : MonoBehaviour {
         }
 
         //break & accelorate
-        if (Input.GetKey(KeyCode.W) || touchControls.Hold & !dead) {
+        if (touchControls.Hold && !dead && GameManager.fuel > 0) {
+            GameManager.UpdateFuel(-fuelCost * Time.deltaTime);
             airBreaksAnimator.SetBool("airBreaks", true);
             reenteryHotEffects.SetActive(false);
             accelThruster.SetActive(false);
@@ -102,7 +105,7 @@ public class CharacterController : MonoBehaviour {
     }
 
     private void CheckHeld() {
-        if (touchControls.Hold) {
+        if (touchControls.Hold && GameManager.fuel > 0) {
             currentHoldTime += Time.deltaTime;
 
             if(currentHoldTime >= holdTime && hasMoved == false) {
