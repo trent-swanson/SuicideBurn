@@ -20,6 +20,11 @@ public class ShuffleBag : MonoBehaviour
     public GameObject warningPanel;
     public GameObject speedHolder;
 
+    public float riseSpeed;
+    public float slowSpeed;
+    public float slowTime;
+
+
     private bool hasGroundSpawned = false;
     private bool hasSHolderCreated = false;
     public int maxChunksBeforeGround = 0;

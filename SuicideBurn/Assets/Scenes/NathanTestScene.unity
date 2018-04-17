@@ -350,6 +350,21 @@ Prefab:
       propertyPath: warningPanel
       value: 
       objectReference: {fileID: 204097134}
+    - target: {fileID: 114414517298501944, guid: 44043dd2e2c4a134587fd985d084c8ed,
+        type: 2}
+      propertyPath: riseSpeed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114414517298501944, guid: 44043dd2e2c4a134587fd985d084c8ed,
+        type: 2}
+      propertyPath: slowSpeed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114414517298501944, guid: 44043dd2e2c4a134587fd985d084c8ed,
+        type: 2}
+      propertyPath: slowTime
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 44043dd2e2c4a134587fd985d084c8ed, type: 2}
   m_IsPrefabParent: 0
@@ -369,6 +384,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c19431e9c82920646a9d0ba715992dcd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  safeSpeed: 0
 --- !u!1001 &1230918212
 Prefab:
   m_ObjectHideFlags: 0
@@ -560,6 +576,12 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1ef4fa81095438347bc282ef4d9779ba, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &1696697762 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114651093553567868, guid: 105a7f487e2538d45b0ac0dd650c90ed,
+    type: 2}
+  m_PrefabInternal: {fileID: 1230918212}
+  m_Script: {fileID: -113659843, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
 --- !u!1001 &1841059831
 Prefab:
   m_ObjectHideFlags: 0
@@ -599,6 +621,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 114350671182821942, guid: bf887551433cd1444aa5f9e4ee508d72,
+        type: 2}
+      propertyPath: fuelSlider
+      value: 
+      objectReference: {fileID: 1696697762}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bf887551433cd1444aa5f9e4ee508d72, type: 2}
   m_IsPrefabParent: 0
