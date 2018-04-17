@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 65806880249862214}
   m_Layer: 0
   m_Name: Obstacle_Wreckage003_007
-  m_TagString: Untagged
+  m_TagString: Obsticle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 135691948392201684}
   m_Layer: 0
   m_Name: Obstacles_Asteroid_001
-  m_TagString: Untagged
+  m_TagString: Obsticle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -63,7 +63,7 @@ GameObject:
   - component: {fileID: 65960276976459742}
   m_Layer: 0
   m_Name: Obstacle_Wreckage003_001
-  m_TagString: Untagged
+  m_TagString: Obsticle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -81,7 +81,7 @@ GameObject:
   - component: {fileID: 65097415954899400}
   m_Layer: 0
   m_Name: Obstacle_Wreckage003_007 (1)
-  m_TagString: Untagged
+  m_TagString: Obsticle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -99,7 +99,7 @@ GameObject:
   - component: {fileID: 135099865671233248}
   m_Layer: 0
   m_Name: Obstacles_Asteroid_003
-  m_TagString: Untagged
+  m_TagString: Obsticle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -117,7 +117,7 @@ GameObject:
   - component: {fileID: 135322740645537230}
   m_Layer: 0
   m_Name: Obstacles_Asteroid_002
-  m_TagString: Untagged
+  m_TagString: Obsticle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -153,7 +153,7 @@ GameObject:
   - component: {fileID: 135794581974687106}
   m_Layer: 0
   m_Name: Obstacles_Asteroid_002 (1)
-  m_TagString: Untagged
+  m_TagString: Obsticle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -223,7 +223,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1484583455884914}
-  m_LocalRotation: {x: 0.4187794, y: 0.46670246, z: -0.77674866, w: -0.058943234}
+  m_LocalRotation: {x: 0.41877934, y: 0.4667024, z: -0.77674854, w: -0.058943227}
   m_LocalPosition: {x: 0.174, y: -2.37, z: -0.000000046468}
   m_LocalScale: {x: 1.5053006, y: 1.5053005, z: 1.5053005}
   m_Children: []

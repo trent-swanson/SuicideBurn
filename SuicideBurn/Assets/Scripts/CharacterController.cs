@@ -142,7 +142,7 @@ public class CharacterController : MonoBehaviour {
 
     void OnTriggerEnter(Collider other) {
         if (other.tag == "Obsticle") {
-            //AirExplode();
+            AirExplode();
         }
     }
 

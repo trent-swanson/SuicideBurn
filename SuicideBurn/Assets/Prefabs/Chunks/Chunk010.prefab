@@ -39,7 +39,7 @@ GameObject:
   - component: {fileID: 4674495544681014}
   m_Layer: 0
   m_Name: Obstacle_WreckagePiece_Single003
-  m_TagString: Untagged
+  m_TagString: Obsticle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -179,7 +179,7 @@ GameObject:
   - component: {fileID: 4305572006502596}
   m_Layer: 0
   m_Name: Obstacle_WreckagePiece_Single001 (1)
-  m_TagString: Untagged
+  m_TagString: Obsticle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -212,7 +212,7 @@ GameObject:
   - component: {fileID: 4894053759208912}
   m_Layer: 0
   m_Name: Obstacle_WreckagePiece_Single001
-  m_TagString: Untagged
+  m_TagString: Obsticle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -248,7 +248,7 @@ GameObject:
   - component: {fileID: 4630459588659732}
   m_Layer: 0
   m_Name: Obstacle_WreckagePiece_Single002
-  m_TagString: Untagged
+  m_TagString: Obsticle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

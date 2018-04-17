@@ -57,9 +57,8 @@ public class PlayerLanding : MonoBehaviour
         else if(other.tag == "Ground"  && safelyHitGroundTrigger)
         {
             // land safely
-            GameManager.UpdatePersonCount();
+            GameManager.UpdatePersonCount(1);
         }
-
         //charactercontroller(groundexplosion)   
     }
 }

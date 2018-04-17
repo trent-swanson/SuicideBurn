@@ -474,7 +474,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4312833031056758}
   - component: {fileID: 65580249955220584}
-  - component: {fileID: 114915711666073974}
+  - component: {fileID: 114828933793741458}
   - component: {fileID: 114092620510565498}
   - component: {fileID: 114435651204623308}
   - component: {fileID: 54590883235486598}
@@ -2214,7 +2214,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1580111354991232}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 2, z: 1}
@@ -2350,7 +2350,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
---- !u!114 &114915711666073974
+--- !u!114 &114828933793741458
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -2358,7 +2358,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1580111354991232}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d72fbf9712337a34986f340812d7bb9b, type: 3}
+  m_Script: {fileID: 11500000, guid: 40ab91a1698d4d24abf9ca6d5a8c62c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 0.2
@@ -2377,7 +2377,7 @@ MonoBehaviour:
   fuelCost: 50
   holdTime: 0.1
   minYShift: 2
-  breakTime: 0.5
+  breakTime: 0.3
   accelerateTime: 1
   breakCurve:
     serializedVersion: 2
