@@ -28,7 +28,7 @@ public class CharacterController : MonoBehaviour {
         gameManager = GameObject.FindGameObjectWithTag("GameController");
         cameraObject = GameObject.FindGameObjectWithTag("MainCamera");
         touchControls = gameManager.GetComponent<Touch>();
-        airBreaksAnimator = transform.GetChild(1).GetComponent<Animator>();
+        airBreaksAnimator = transform.GetChild(0).GetChild(1).GetComponent<Animator>();
     }
 	
 	void Update ()
