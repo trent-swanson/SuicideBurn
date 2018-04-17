@@ -98,7 +98,7 @@ public class PlayerController : MonoBehaviour {
             Destroy(gameObject);
             // Play an effect in their place
             Instantiate(deathEffect, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
-            gameController.isDead = true;
+            //gameController.isDead = true;
             gameController.GameOver();
         }
     }

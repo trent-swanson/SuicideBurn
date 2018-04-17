@@ -11,18 +11,17 @@ public class GameController : MonoBehaviour {
 	public Text scoreText;
 
 	bool isPaused = false;
-    public bool isDead = false;
 
 	 void OnEnable()
     {
         GameManager.OnUpdateFuel += UpdateFuel;
-		GameManager.OnUpdateScore += UpdateScore;
+		GameManager.OnUpdatePersonCount += UpdateScore;
     }
 
     void OnDisable()
     {
         GameManager.OnUpdateFuel -= UpdateFuel;
-		GameManager.OnUpdateScore -= UpdateScore;
+		GameManager.OnUpdatePersonCount -= UpdateScore;
     }
 
 	void Start() {

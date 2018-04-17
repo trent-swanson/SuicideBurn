@@ -12,15 +12,15 @@ public static class GameManager {
 
 	public delegate void UpdateAction();
     public static event UpdateAction OnUpdateFuel;
-	public static event UpdateAction OnUpdateScore;
+	public static event UpdateAction OnUpdatePersonCount;
 
 	public static void UpdateFuel(float amount) {
 		fuel += amount;
 		OnUpdateFuel();
 	}
 
-	public static void UpdateScore(int amount) {
-		score += amount;
-		OnUpdateScore();
+	public static void UpdatepersonCount(int amount) {
+		personCount += amount;
+		OnUpdatePersonCount();
 	}
 }

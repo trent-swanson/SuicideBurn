@@ -74,9 +74,13 @@ MonoBehaviour:
   - {fileID: 1103857081454786, guid: 75bed54d0d369b24bb60c54b5fc559ba, type: 2}
   loadedChunks: []
   tempChunkList: []
-  groundChunk: {fileID: 1078238438737956, guid: 6a50770e8ef1fa946be35513fe897bb6,
+  groundChunk: {fileID: 1078238438737956, guid: aa59e8b6be037d748bf3976ce617d14d,
     type: 2}
   warningPanel: {fileID: 0}
   speedHolder: {fileID: 1249197794627064, guid: 727cf6cb0d5123d4ea916ade8db0c9da,
     type: 2}
+  riseSpeed: 2
+  slowSpeed: 1
+  slowTime: 1
   maxChunksBeforeGround: 19
+  chunksCreated: 0

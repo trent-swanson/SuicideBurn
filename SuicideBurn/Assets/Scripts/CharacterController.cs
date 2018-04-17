@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CharacterController : MonoBehaviour {
 
@@ -139,11 +140,18 @@ public class CharacterController : MonoBehaviour {
         }
     }
 
+    void OnTriggerEnter(Collider other) {
+        if (other.tag == "Obsticle") {
+            //AirExplode();
+        }
+    }
+
     public void AirExplode() {
         dead = true;
         airExplosion.SetActive(true);
         podMesh.SetActive(false);
         reenteryEffects.SetActive(false);
+        StartCoroutine(Die());
     }
 
     public void GroundExplode() {
@@ -151,9 +159,11 @@ public class CharacterController : MonoBehaviour {
         groundExplosion.SetActive(true);
         podMesh.SetActive(false);
         reenteryEffects.SetActive(false);
+        StartCoroutine(Die());
     }
 
-    public void Die() {
-
+    IEnumerator Die() {
+        yield return new WaitForSeconds(5);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
