@@ -28,6 +28,7 @@ public class CharacterController : MonoBehaviour {
     public GameObject reenteryEffects;
     public GameObject reenteryHotEffects;
     public GameObject airExplosion;
+    public GameObject groundExplosion;
     public GameObject podMesh;
 
     [Space]
@@ -143,7 +144,13 @@ public class CharacterController : MonoBehaviour {
         airExplosion.SetActive(true);
         podMesh.SetActive(false);
         reenteryEffects.SetActive(false);
+    }
 
+    public void GroundExplode() {
+        dead = true;
+        groundExplosion.SetActive(true);
+        podMesh.SetActive(false);
+        reenteryEffects.SetActive(false);
     }
 
     public void Die() {
