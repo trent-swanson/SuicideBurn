@@ -52,11 +52,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chunksArray:
-  - {fileID: 1603923779068284, guid: fb0fd1122993cac40a62e81ef004d304, type: 2}
-  - {fileID: 1109435187776094, guid: a16ac92188f84994885b7de5ecf0ed1d, type: 2}
-  - {fileID: 1832395269900764, guid: d81ebc1402f1fa44da76dd69a2407658, type: 2}
-  - {fileID: 1530650066071606, guid: cd942dbe689f1924c91a7f083fddd564, type: 2}
-  - {fileID: 1320023391319362, guid: 3f86774880a7b484bb5152e48d0aff00, type: 2}
+  - {fileID: 1356019888888996, guid: f32ab2e81c77bbf46a1b56d811d45953, type: 2}
+  - {fileID: 1522896624745812, guid: ab39a96d98527594c8fb64b6294c1e72, type: 2}
+  - {fileID: 1132422079678116, guid: c15f954bade7d5d4a9f444feb77c6c1d, type: 2}
+  - {fileID: 1708165942180618, guid: 16748863b89f6ab4a9e0aa847cf7aa37, type: 2}
+  - {fileID: 1708165942180618, guid: 16748863b89f6ab4a9e0aa847cf7aa37, type: 2}
+  - {fileID: 1132422079678116, guid: c15f954bade7d5d4a9f444feb77c6c1d, type: 2}
+  - {fileID: 1175107754067238, guid: f68ab1281d26a234d984e26797aada75, type: 2}
+  - {fileID: 1275819666590548, guid: 968e819fa39af4d40ae7fb5c0f9f89c5, type: 2}
+  - {fileID: 1657503718664772, guid: da676dfa87106c448b2c02d79e470a11, type: 2}
+  - {fileID: 1522896624745812, guid: ab39a96d98527594c8fb64b6294c1e72, type: 2}
+  - {fileID: 1657503718664772, guid: da676dfa87106c448b2c02d79e470a11, type: 2}
+  - {fileID: 1356019888888996, guid: f32ab2e81c77bbf46a1b56d811d45953, type: 2}
+  - {fileID: 1635099829750388, guid: 883d2a22a178b6b46b44ba88280f439a, type: 2}
+  - {fileID: 1132422079678116, guid: c15f954bade7d5d4a9f444feb77c6c1d, type: 2}
+  - {fileID: 1522896624745812, guid: ab39a96d98527594c8fb64b6294c1e72, type: 2}
+  - {fileID: 1780682333548458, guid: e0239b2297318664cb2091af438bacd7, type: 2}
+  - {fileID: 1275819666590548, guid: 968e819fa39af4d40ae7fb5c0f9f89c5, type: 2}
+  - {fileID: 1708165942180618, guid: 16748863b89f6ab4a9e0aa847cf7aa37, type: 2}
+  - {fileID: 1175107754067238, guid: f68ab1281d26a234d984e26797aada75, type: 2}
+  - {fileID: 1103857081454786, guid: 75bed54d0d369b24bb60c54b5fc559ba, type: 2}
   loadedChunks: []
   tempChunkList: []
   groundChunk: {fileID: 1078238438737956, guid: 6a50770e8ef1fa946be35513fe897bb6,
@@ -64,4 +79,4 @@ MonoBehaviour:
   warningPanel: {fileID: 0}
   speedHolder: {fileID: 1249197794627064, guid: 727cf6cb0d5123d4ea916ade8db0c9da,
     type: 2}
-  maxChunksBeforeGround: 6
+  maxChunksBeforeGround: 19

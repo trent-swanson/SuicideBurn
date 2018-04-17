@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 0fba7954ac2e468448aef67d029c9a33
-timeCreated: 1523932205
+guid: 8627f1b4b8b88ca4db63005832d04a11
+timeCreated: 1523932075
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -43,7 +43,7 @@ ModelImporter:
     4300004: Airbreak3
     4300006: Airbreak2
     4300008: Airbreak1
-    7400000: 21
+    7400000: airbreakidle
     9500000: //RootNode
   externalObjects: {}
   materials:
@@ -73,7 +73,7 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: 21
+      name: airbreakidle
       takeName: 21
       firstFrame: 21
       lastFrame: 40
@@ -99,7 +99,7 @@ ModelImporter:
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 21
+      additiveReferencePoseFrame: 0
     isReadable: 1
   meshes:
     lODScreenPercentages: []

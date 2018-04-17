@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 0fba7954ac2e468448aef67d029c9a33
-timeCreated: 1523932205
+guid: b7b303559ee0fd242ae2cb09ba373206
+timeCreated: 1523938566
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -43,7 +43,7 @@ ModelImporter:
     4300004: Airbreak3
     4300006: Airbreak2
     4300008: Airbreak1
-    7400000: 21
+    7400000: open
     9500000: //RootNode
   externalObjects: {}
   materials:
@@ -71,35 +71,7 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations:
-    - serializedVersion: 16
-      name: 21
-      takeName: 21
-      firstFrame: 21
-      lastFrame: 40
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 1
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 21
+    clipAnimations: []
     isReadable: 1
   meshes:
     lODScreenPercentages: []

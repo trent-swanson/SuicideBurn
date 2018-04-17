@@ -1,49 +1,47 @@
 fileFormatVersion: 2
-guid: 0fba7954ac2e468448aef67d029c9a33
-timeCreated: 1523932205
+guid: 41f5ff09db387024d9f90b2af0e5ec45
+timeCreated: 1523939752
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: Airbreak1
-    100002: Airbreak1 1
-    100004: Airbreak2
-    100006: Airbreak3
-    100008: Airbreak4
-    100010: Airbreak5
-    100012: Airbreak6
-    100014: Airbreak7
-    100016: airbreaks
+    100000: Compartment
+    100002: Door1
+    100004: door1
+    100006: Door2
+    100008: door2
+    100010: Door3
+    100012: door3
+    100014: Door4
+    100016: door4
     100018: //RootNode
-    100020: flightcompartment
-    400000: Airbreak1
-    400002: Airbreak1 1
-    400004: Airbreak2
-    400006: Airbreak3
-    400008: Airbreak4
-    400010: Airbreak5
-    400012: Airbreak6
-    400014: Airbreak7
-    400016: airbreaks
+    400000: Compartment
+    400002: Door1
+    400004: door1
+    400006: Door2
+    400008: door2
+    400010: Door3
+    400012: door3
+    400014: Door4
+    400016: door4
     400018: //RootNode
-    400020: flightcompartment
     2100000: StingrayPBS1
-    2300000: Airbreak1 1
-    2300002: Airbreak2
-    2300004: Airbreak3
-    2300006: Airbreak4
-    2300008: flightcompartment
-    3300000: Airbreak1 1
-    3300002: Airbreak2
-    3300004: Airbreak3
-    3300006: Airbreak4
-    3300008: flightcompartment
-    4300000: flightcompartment
-    4300002: Airbreak4
-    4300004: Airbreak3
-    4300006: Airbreak2
-    4300008: Airbreak1
-    7400000: 21
+    2300000: Compartment
+    2300002: Door1
+    2300004: Door2
+    2300006: Door3
+    2300008: Door4
+    3300000: Compartment
+    3300002: Door1
+    3300004: Door2
+    3300006: Door3
+    3300008: Door4
+    4300000: Compartment
+    4300002: Door4
+    4300004: Door3
+    4300006: Door2
+    4300008: Door1
+    7400000: doorsopen
     9500000: //RootNode
   externalObjects: {}
   materials:
@@ -71,35 +69,7 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations:
-    - serializedVersion: 16
-      name: 21
-      takeName: 21
-      firstFrame: 21
-      lastFrame: 40
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 1
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 21
+    clipAnimations: []
     isReadable: 1
   meshes:
     lODScreenPercentages: []
