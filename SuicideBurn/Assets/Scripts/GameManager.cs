@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public static class GameManager {
 
@@ -22,5 +23,6 @@ public static class GameManager {
 	public static void UpdatePersonCount(int amount) {
 		personCount += amount;
 		OnUpdatePersonCount();
+		SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 	}
 }
