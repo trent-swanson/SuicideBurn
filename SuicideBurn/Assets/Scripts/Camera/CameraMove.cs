@@ -17,10 +17,13 @@ public class CameraMove : MonoBehaviour {
     private bool hasMoved;
 
     private float originalYPos;
+    private float minYPos;
 
     private void Start() {
         touch = GameObject.FindGameObjectWithTag("GameController").GetComponent<Touch>();
         originalYPos = transform.position.y;
+        minYPos = transform.position.y + minYShift;
+        Debug.Log(originalYPos);
     }
 
     private void Update() {
@@ -34,7 +37,7 @@ public class CameraMove : MonoBehaviour {
             if(currentHoldTime >= holdTime && hasMoved == false) {
                 hasMoved = true;
                 StopAllCoroutines();
-                StartCoroutine(MoveCam(new Vector3(transform.position.x, transform.position.y + minYShift, transform.position.z), breakTime, breakCurve));
+                StartCoroutine(MoveCam(new Vector3(transform.position.x, minYPos, transform.position.z), breakTime, breakCurve));
                 currentHoldTime = 0f;
             }
         } else {
