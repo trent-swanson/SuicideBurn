@@ -24,7 +24,6 @@ public class TopDestroyer : MonoBehaviour
     {
         if (other.tag == "Destroyer")
         {
-            
             shuffleBag.GetComponent<ShuffleBag>().loadedChunks.RemoveAt(0);
             Destroy(gameObject);
             isCollidingwithDestroyer = true;

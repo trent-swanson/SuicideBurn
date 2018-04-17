@@ -1,12 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class PlayerLanding : MonoBehaviour
 {
     
     public float safeSpeed;
-
+    private bool safelyHitGroundTrigger;
     private float currentSpeed;
     private GameObject speedHolder;
     // Use this for initialization
@@ -29,12 +30,36 @@ public class PlayerLanding : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         CalcCurrentSpeed();
-
-        if (currentSpeed >= safeSpeed)
+        if (other.tag == "GroundTrigger" && currentSpeed >= safeSpeed)
         {
-            // explode and die
+            safelyHitGroundTrigger = false;
+            gameObject.GetComponent<Rigidbody>().isKinematic = false;
+            gameObject.GetComponent<Rigidbody>().useGravity = true;
+        }
+        else if (other.tag == "GroundTrigger" && currentSpeed <= safeSpeed)
+        {
+            safelyHitGroundTrigger = true;
+            gameObject.GetComponent<Rigidbody>().isKinematic = false;
+            gameObject.GetComponent<Rigidbody>().useGravity = true;
+        }
+
+        if (other.tag == "Ground" && !safelyHitGroundTrigger)
+        {
+            
+
+            // play explode animation
             // game over
             Destroy(gameObject.GetComponent<MeshRenderer>());
+            
         }
+
+        else if(other.tag == "Ground"  && safelyHitGroundTrigger)
+        {
+            // land safely
+            GameManager.personCount++;
+            SceneManager.LoadScene(0);
+        }
+
+        //charactercontroller(groundexplosion)   
     }
 }
