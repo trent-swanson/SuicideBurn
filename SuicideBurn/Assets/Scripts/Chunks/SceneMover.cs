@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class SceneMover : MonoBehaviour {
 
-    public GameObject shuffleBag;
+    
     public GameObject gameManager;
 
     // speed that it rises.
@@ -27,15 +28,7 @@ public class SceneMover : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        //if (gameManager.GetComponent<Touch>().Hold)
-        //{
-        //    isSlowing = true;
-        //}
-        //else
-        //{
-        //    isSlowing = false;
-        //}
-
+        
         if (gameManager.GetComponent<Touch>().Hold && isSlowing == false && currentSpeed != slowSpeed)
         {
             hasSlowed = true;
@@ -72,4 +65,6 @@ public class SceneMover : MonoBehaviour {
         currentSpeed = finalSpeed;
         isSlowing = false;
     }
+
+    
 }

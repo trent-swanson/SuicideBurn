@@ -17,7 +17,7 @@ public class TopDestroyer : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-        Debug.Log(isCollidingwithDestroyer);
+        //Debug.Log(isCollidingwithDestroyer);
 	}
 
     private void OnTriggerEnter(Collider other)

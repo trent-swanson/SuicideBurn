@@ -17,12 +17,13 @@ public class ShuffleBag : MonoBehaviour
 
     public GameObject groundChunk;
 
-    
-    private bool hasGroundSpawned = false;
+    public GameObject warningPanel;
+    public GameObject speedHolder;
 
+    private bool hasGroundSpawned = false;
+    private bool hasSHolderCreated = false;
     public int maxChunksBeforeGround = 0;
     private int chunksCreated = 0;
-
 
     //public GameObject chunkParent;
 
@@ -39,7 +40,7 @@ public class ShuffleBag : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(chunksCreated);
+        //Debug.Log(chunksCreated);
         if(chunksCreated == maxChunksBeforeGround && !hasGroundSpawned)
         {
             CreateGroundChunk();
@@ -48,7 +49,11 @@ public class ShuffleBag : MonoBehaviour
 
         //Debug.Log(loadedChunks.Count);
 
-
+        if(!hasSHolderCreated)
+        {
+            hasSHolderCreated = true;
+            CreateSpeedHolder();
+        }
 
         if (loadedChunks.Count < 4 && !hasGroundSpawned)
         {
@@ -94,10 +99,20 @@ public class ShuffleBag : MonoBehaviour
 
     private void CreateGroundChunk()
     {
+        warningPanel.gameObject.SetActive(true);
         GameObject newGroundChunk = Instantiate(groundChunk, new Vector3(0, -30, 0), Quaternion.identity);
         newGroundChunk.AddComponent<SceneMover>();
         newGroundChunk.GetComponent<SceneMover>().gameManager = GameObject.Find("GameManager");
+        newGroundChunk.AddComponent<Ground>();
     }
+
+    public void CreateSpeedHolder()
+    {
+        GameObject newSpeedHolder = Instantiate(speedHolder, new Vector3(0, 0, -200), Quaternion.identity);
+        newSpeedHolder.AddComponent<SceneMover>();
+        newSpeedHolder.GetComponent<SceneMover>().gameManager = GameObject.Find("GameManager");
+    }
+
     private void populateChunkList()
     {
         for (int i = 0; i < chunksArray.Length; i++)
@@ -106,4 +121,11 @@ public class ShuffleBag : MonoBehaviour
         }
     }
 
+    // Used to check how fast the "Player is going"
+    public float GetCurrentSpeed()
+    {
+        return gameObject.GetComponent<SceneMover>().currentSpeed;
+    }
+
+    //todo: check whether the player is going too fast, if he is then hits the ground, he dies.
 }
