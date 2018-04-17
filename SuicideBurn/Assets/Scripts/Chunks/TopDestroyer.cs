@@ -6,9 +6,6 @@ public class TopDestroyer : MonoBehaviour
 {
     public GameObject shuffleBag;
 
-    // This counts how many times a chunk has been destroyed.
-    public int chunkDestroyCounter = 0;
-
     private bool isCollidingwithDestroyer;
 
 	// Use this for initialization
@@ -27,8 +24,8 @@ public class TopDestroyer : MonoBehaviour
     {
         if (other.tag == "Destroyer")
         {
-            ++chunkDestroyCounter;
-            shuffleBag.GetComponent<ShuffleBag>().loadedChunks.RemoveAt(1);
+            
+            shuffleBag.GetComponent<ShuffleBag>().loadedChunks.RemoveAt(0);
             Destroy(gameObject);
             isCollidingwithDestroyer = true;
         }
