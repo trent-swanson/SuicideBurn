@@ -5,8 +5,11 @@ using UnityEngine;
 public class TopDestroyer : MonoBehaviour
 {
     public GameObject shuffleBag;
-    private bool isCollidingwithDestroyer;
 
+    // This counts how many times a chunk has been destroyed.
+    public int chunkDestroyCounter = 0;
+
+    private bool isCollidingwithDestroyer;
 
 	// Use this for initialization
 	void Start ()
@@ -24,7 +27,7 @@ public class TopDestroyer : MonoBehaviour
     {
         if (other.tag == "Destroyer")
         {
-            
+            ++chunkDestroyCounter;
             shuffleBag.GetComponent<ShuffleBag>().loadedChunks.RemoveAt(1);
             Destroy(gameObject);
             isCollidingwithDestroyer = true;

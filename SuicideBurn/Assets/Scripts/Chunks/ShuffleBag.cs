@@ -69,6 +69,7 @@ public class ShuffleBag : MonoBehaviour
         GameObject chunk = Instantiate(chunksArray[randChunk], new Vector3(0, yPos, 0), Quaternion.identity);
 
         chunk.AddComponent<SceneMover>();
+        chunk.GetComponent<SceneMover>().gameManager = GameObject.Find("GameManager");
 
         chunk.AddComponent<TopDestroyer>();
         chunk.GetComponent<TopDestroyer>().shuffleBag = GameObject.Find("ShuffleBag");
