@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameController : MonoBehaviour {
 
@@ -10,7 +11,7 @@ public class GameController : MonoBehaviour {
 	bool isPaused = false;
     public bool isDead = false;
 
-	public void Pause() {
+    public void Pause() {
 		isPaused = !isPaused;
 		if (isPaused)
 			pausePanel.SetActive(true);

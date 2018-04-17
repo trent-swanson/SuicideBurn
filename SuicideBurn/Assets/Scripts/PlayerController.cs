@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour {
 
@@ -10,6 +11,8 @@ public class PlayerController : MonoBehaviour {
     private Touch touchControls;
     // Get instance of GameController
     private GameController gameController;
+
+    public Slider fuelSlider;
 
     private bool ifMoving = false;
 
@@ -38,11 +41,20 @@ public class PlayerController : MonoBehaviour {
         touchControls = gameManager.GetComponent<Touch>();
         // Get instance of GameController
         gameController = gameManager.GetComponent<GameController>();
+
+        GameManager.fuel = 0.0f;
     }
 
     // Update is called once per frame
     void Update ()
     {
+        FuelGauge();
+
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            GameManager.fuel += 0.5f;
+        }
+
         // If the player swipes right
 		if (ifMoving == false && transform.position.x < 2f && (touchControls.SwipeRight == true || Input.GetKeyDown(KeyCode.D)))
         {
@@ -68,17 +80,22 @@ public class PlayerController : MonoBehaviour {
         }
     }
 
-    // If a collision is made
-    void OnCollisionEnter(Collision collision)
+    void FuelGauge()
     {
-        // If collision is made with "Coin"
-        if (collision.gameObject.tag == "Coin")
+        fuelSlider.value = GameManager.fuel;
+    }
+
+    // If a collision is made
+    void OnTriggerEnter(Collider other)
+    {
+        // If collision is made with "Fuel"
+        if (other.gameObject.tag == "Fuel")
         {
-            GameManager.score += 10;
+            GameManager.fuel += 0.1f;
         }
 
         // If collision is made with "Laser"
-        if (collision.gameObject.tag == "Laser")
+        if (other.gameObject.tag == "Laser")
         {
             // Destroy the player
             Destroy(gameObject);
