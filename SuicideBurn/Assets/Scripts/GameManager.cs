@@ -19,7 +19,7 @@ public static class GameManager {
 		OnUpdateFuel();
 	}
 
-	public static void UpdatepersonCount(int amount) {
+	public static void UpdatePersonCount(int amount) {
 		personCount += amount;
 		OnUpdatePersonCount();
 	}
