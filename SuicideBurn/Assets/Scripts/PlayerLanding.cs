@@ -45,11 +45,12 @@ public class PlayerLanding : MonoBehaviour
 
         if (other.tag == "Ground" && !safelyHitGroundTrigger)
         {
-            
+
 
             // play explode animation
             // game over
-            Destroy(gameObject.GetComponent<MeshRenderer>());
+            //Destroy(gameObject.GetComponent<MeshRenderer>());
+            transform.GetComponent<CharacterController>().GroundExplode();
             
         }
 
