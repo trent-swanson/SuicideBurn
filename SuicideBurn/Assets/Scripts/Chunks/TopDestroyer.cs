@@ -5,8 +5,8 @@ using UnityEngine;
 public class TopDestroyer : MonoBehaviour
 {
     public GameObject shuffleBag;
-    private bool isCollidingwithDestroyer;
 
+    private bool isCollidingwithDestroyer;
 
 	// Use this for initialization
 	void Start ()
@@ -25,7 +25,7 @@ public class TopDestroyer : MonoBehaviour
         if (other.tag == "Destroyer")
         {
             
-            shuffleBag.GetComponent<ShuffleBag>().loadedChunks.RemoveAt(1);
+            shuffleBag.GetComponent<ShuffleBag>().loadedChunks.RemoveAt(0);
             Destroy(gameObject);
             isCollidingwithDestroyer = true;
         }

@@ -1266,6 +1266,9 @@ MonoBehaviour:
   - {fileID: 786735635}
   loadedChunks: []
   tempChunkList: []
+  groundChunk: {fileID: 1078238438737956, guid: 6a50770e8ef1fa946be35513fe897bb6,
+    type: 2}
+  maxChunksBeforeGround: 6
 --- !u!4 &1949930193
 Transform:
   m_ObjectHideFlags: 0

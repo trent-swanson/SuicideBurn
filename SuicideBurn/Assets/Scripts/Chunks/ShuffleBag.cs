@@ -15,6 +15,15 @@ public class ShuffleBag : MonoBehaviour
     [HideInInspector]
     public List<GameObject> tempChunkList;
 
+    public GameObject groundChunk;
+
+    
+    private bool hasGroundSpawned = false;
+
+    public int maxChunksBeforeGround = 0;
+    private int chunksCreated = 0;
+
+
     //public GameObject chunkParent;
 
     //private int chunkCount;
@@ -30,11 +39,18 @@ public class ShuffleBag : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(chunksCreated);
+        if(chunksCreated == maxChunksBeforeGround && !hasGroundSpawned)
+        {
+            CreateGroundChunk();
+            hasGroundSpawned = true;
+        }
 
-        Debug.Log(loadedChunks.Count);
+        //Debug.Log(loadedChunks.Count);
 
 
-        if (loadedChunks.Count < 4)
+
+        if (loadedChunks.Count < 4 && !hasGroundSpawned)
         {
             if (loadedChunks.Count <= 2)
             {
@@ -69,11 +85,19 @@ public class ShuffleBag : MonoBehaviour
         GameObject chunk = Instantiate(chunksArray[randChunk], new Vector3(0, yPos, 0), Quaternion.identity);
 
         chunk.AddComponent<SceneMover>();
+        chunk.GetComponent<SceneMover>().gameManager = GameObject.Find("GameManager");
 
         chunk.AddComponent<TopDestroyer>();
         chunk.GetComponent<TopDestroyer>().shuffleBag = GameObject.Find("ShuffleBag");
+        ++chunksCreated;
     }
 
+    private void CreateGroundChunk()
+    {
+        GameObject newGroundChunk = Instantiate(groundChunk, new Vector3(0, -30, 0), Quaternion.identity);
+        newGroundChunk.AddComponent<SceneMover>();
+        newGroundChunk.GetComponent<SceneMover>().gameManager = GameObject.Find("GameManager");
+    }
     private void populateChunkList()
     {
         for (int i = 0; i < chunksArray.Length; i++)
