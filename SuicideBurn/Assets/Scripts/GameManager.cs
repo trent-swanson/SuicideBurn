@@ -10,11 +10,17 @@ public static class GameManager {
 	[Range(0, 1000)]
 	public static float fuel;
 
-	public delegate void UpdateFuelAction();
-    public static event UpdateFuelAction OnUpdateFuel;
+	public delegate void UpdateAction();
+    public static event UpdateAction OnUpdateFuel;
+	public static event UpdateAction OnUpdateScore;
 
 	public static void UpdateFuel(float amount) {
 		fuel += amount;
 		OnUpdateFuel();
+	}
+
+	public static void UpdateScore(int amount) {
+		score += amount;
+		OnUpdateScore();
 	}
 }

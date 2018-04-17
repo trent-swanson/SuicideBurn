@@ -8,6 +8,7 @@ public class GameController : MonoBehaviour {
 	public GameObject pausePanel;
     public GameObject gameoverPanel;
 	public Slider fuelSlider;
+	public Text scoreText;
 
 	bool isPaused = false;
     public bool isDead = false;
@@ -15,13 +16,18 @@ public class GameController : MonoBehaviour {
 	 void OnEnable()
     {
         GameManager.OnUpdateFuel += UpdateFuel;
+		GameManager.OnUpdateScore += UpdateScore;
     }
-    
-    
+
     void OnDisable()
     {
         GameManager.OnUpdateFuel -= UpdateFuel;
+		GameManager.OnUpdateScore -= UpdateScore;
     }
+
+	void Start() {
+		UpdateScore();
+	}
 
     public void Pause() {
 		isPaused = !isPaused;
@@ -36,10 +42,14 @@ public class GameController : MonoBehaviour {
     }
 
 	public void Exit() {
-
+		Application.Quit();
 	}
 
 	void UpdateFuel() {
 		fuelSlider.value = GameManager.fuel;
+	}
+
+	void UpdateScore() {
+		scoreText.text = GameManager.score.ToString();
 	}
 }
