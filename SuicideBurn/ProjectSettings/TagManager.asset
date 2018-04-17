@@ -8,6 +8,8 @@ TagManager:
   - Coin
   - Fuel
   - SpeedHolder
+  - GroundTrigger
+  - Ground
   layers:
   - Default
   - TransparentFX
