@@ -127,14 +127,14 @@ public class CharacterController : MonoBehaviour {
         }
     }
 
-    private IEnumerator BreakMove(float position, float lerpTIme, AnimationCurve curve) {
+    private IEnumerator BreakMove(float position, float lerpTime, AnimationCurve curve) {
         float t = 0f;
         float startPostion = transform.position.y;
         float currentPosition = 0f;
 
-        while (t <= lerpTIme) {
+        while (t <= lerpTime) {
             t += Time.deltaTime;
-            currentPosition = Mathf.LerpUnclamped(startPostion, position, curve.Evaluate(t / lerpTIme));
+            currentPosition = Mathf.LerpUnclamped(startPostion, position, curve.Evaluate(t / lerpTime));
             transform.position = new Vector3(transform.position.x, currentPosition, transform.position.z);
             yield return null;
         }

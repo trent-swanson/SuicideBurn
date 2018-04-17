@@ -62,10 +62,8 @@ public class Touch : MonoBehaviour {
 			}
 		}
 
-        if (hold) {
-            Debug.Log("Holding");
+        if (hold)
             return;
-        }
 
 		//Crossed Deadzone?
 		if (swipeDelta.magnitude > deadzone) {

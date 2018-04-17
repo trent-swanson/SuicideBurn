@@ -5,26 +5,17 @@ using UnityEngine;
 
 public class PlayerLanding : MonoBehaviour
 {
-    
     public float safeSpeed;
     private bool safelyHitGroundTrigger;
     private float currentSpeed;
     private GameObject speedHolder;
-    // Use this for initialization
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-    }
-
 
     private void CalcCurrentSpeed()
     {
-        currentSpeed = GameObject.Find("SpeedHolder(Clone)").GetComponent<SpeedHolder>().GetCurrentSpeed();
+        if (FindObjectOfType<SpeedHolder>() == null)
+            return;
+
+        currentSpeed = FindObjectOfType<SpeedHolder>().GetCurrentSpeed();
     }
 
     private void OnTriggerEnter(Collider other)
