@@ -539,7 +539,7 @@ MonoBehaviour:
   moveSpeed: 0.2
   lanePos: 2
   breakSpeed: 0.2
-  accelSpeed: 2
+  accelSpeed: -0.005
   deathEffect: {fileID: 0}
 --- !u!1 &1431544057 stripped
 GameObject:

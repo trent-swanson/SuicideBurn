@@ -44,17 +44,17 @@ public class PlayerController : MonoBehaviour {
     void Update ()
     {
         // If the player swipes right
-		if (ifMoving == false && transform.position.x < 2.5f && (touchControls.SwipeRight == true || Input.GetKeyDown(KeyCode.D)))
+		if (ifMoving == false && transform.position.x < 2f && (touchControls.SwipeRight == true || Input.GetKeyDown(KeyCode.D)))
         {
             StartCoroutine(MoveToPosition(new Vector3(transform.position.x + lanePos, transform.position.y, transform.position.z), moveSpeed));
         }
         // If the player swipes left
-        if (ifMoving == false && transform.position.x > -2.5f && (touchControls.SwipeLeft == true || Input.GetKeyDown(KeyCode.A)))
+        if (ifMoving == false && transform.position.x > -2f && (touchControls.SwipeLeft == true || Input.GetKeyDown(KeyCode.A)))
         {
             StartCoroutine(MoveToPosition(new Vector3(transform.position.x - lanePos, transform.position.y, transform.position.z), moveSpeed));
         }
         // If the player breaks
-        if (ifMoving == false && transform.position.y < 2.0f && (Input.GetKeyDown(KeyCode.W) || touchControls.Tap))
+        if (ifMoving == false && transform.position.y < 2.0f && (Input.GetKeyDown(KeyCode.W) || touchControls.Tap && !touchControls.Hold))
         {
             StartCoroutine(MoveToPosition(new Vector3(transform.position.x, 2.0f, transform.position.z), breakSpeed));
         }
@@ -63,7 +63,7 @@ public class PlayerController : MonoBehaviour {
         {
             if (transform.position.y > 0.5f)
             {
-                StartCoroutine(AccelToPosition(new Vector3(transform.position.x, transform.position.y - 1.0f, transform.position.z), accelSpeed));
+                transform.position = transform.position += new Vector3(0, accelSpeed, 0);
             }
         }
     }
@@ -101,17 +101,5 @@ public class PlayerController : MonoBehaviour {
             yield return null;
         }
         ifMoving = false;
-    }
-
-    public IEnumerator AccelToPosition(Vector3 position, float timeToMove)
-    {
-        Vector3 currentPos = transform.position;
-        float t = 0f;
-        while (t < 1)
-        {
-            t += Time.deltaTime / timeToMove;
-            transform.position = Vector3.Lerp(currentPos, position, t);
-            yield return null;
-        }
     }
 }
