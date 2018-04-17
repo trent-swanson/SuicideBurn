@@ -20,15 +20,17 @@ public class ShuffleBag : MonoBehaviour
     public GameObject warningPanel;
     public GameObject speedHolder;
 
+    [Tooltip("The speed that the chunks rise at.")]
     public float riseSpeed;
+    [Tooltip("The speed that the chunks rise at WHILE SLOWED.")]
     public float slowSpeed;
+    [Tooltip("The time it takes to go between regular speed and slow.")]
     public float slowTime;
-
 
     private bool hasGroundSpawned = false;
     private bool hasSHolderCreated = false;
     public int maxChunksBeforeGround = 0;
-    private int chunksCreated = 0;
+    public int chunksCreated = 0;
 
     //public GameObject chunkParent;
 
