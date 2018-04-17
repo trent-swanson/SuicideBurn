@@ -374,7 +374,7 @@ Prefab:
     - target: {fileID: 114414517298501944, guid: 44043dd2e2c4a134587fd985d084c8ed,
         type: 2}
       propertyPath: maxChunksBeforeGround
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 44043dd2e2c4a134587fd985d084c8ed, type: 2}
@@ -395,6 +395,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d72fbf9712337a34986f340812d7bb9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameManager: {fileID: 0}
+  touchControls: {fileID: 0}
+  airBreaksAnimator: {fileID: 0}
+  cameraObject: {fileID: 0}
+  ifMoving: 0
+  hasMoved: 0
+  currentHoldTime: 0
   moveSpeed: 0
   lanePos: 0
   breakThrusters: []
@@ -410,17 +417,18 @@ MonoBehaviour:
   breakTime: 0
   accelerateTime: 0
   breakCurve:
-    serializedVersion: 2
     m_Curve: []
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
   accelerateCurve:
-    serializedVersion: 2
     m_Curve: []
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  originalYPos: 0
+  minYPos: 0
+  dead: 0
 --- !u!114 &1163145687
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class SceneMover : MonoBehaviour {
+public class SceneMover : MonoBehaviour
+{
 
-    
+
     public GameObject gameManager;
 
     // speed that it rises.
@@ -19,16 +20,19 @@ public class SceneMover : MonoBehaviour {
     public bool isSlowing;
     private bool hasSlowed;
 
-	// Use this for initialization
-	void Start ()
+    // Use this for initialization
+    void Start()
     {
+        riseSpeed = GameObject.Find("ShuffleBag").GetComponent<ShuffleBag>().riseSpeed;
+        slowSpeed = GameObject.Find("ShuffleBag").GetComponent<ShuffleBag>().slowSpeed;
+        slowTime = GameObject.Find("ShuffleBag").GetComponent<ShuffleBag>().slowTime;
         currentSpeed = riseSpeed;
-	}
+    }
 
-	// Update is called once per frame
-	void Update ()
+    // Update is called once per frame
+    void Update()
     {
-        
+
         if (gameManager.GetComponent<Touch>().Hold && isSlowing == false && currentSpeed != slowSpeed)
         {
             hasSlowed = true;
@@ -36,9 +40,9 @@ public class SceneMover : MonoBehaviour {
             StopAllCoroutines();
             StartCoroutine(SpeedScale(slowSpeed));
         }
-        else if(gameManager.GetComponent<Touch>().Hold == false)
+        else if (gameManager.GetComponent<Touch>().Hold == false)
         {
-            if(hasSlowed)
+            if (hasSlowed)
             {
                 isSlowing = false;
                 hasSlowed = false;
@@ -48,7 +52,7 @@ public class SceneMover : MonoBehaviour {
         }
 
         gameObject.transform.Translate(Vector3.up * Time.deltaTime * currentSpeed, Space.World);
-	}
+    }
 
     private IEnumerator SpeedScale(float finalSpeed)
     {
@@ -66,5 +70,5 @@ public class SceneMover : MonoBehaviour {
         isSlowing = false;
     }
 
-    
+
 }

@@ -48,7 +48,7 @@ public class ShuffleBag : MonoBehaviour
     void Update()
     {
         //Debug.Log(chunksCreated);
-        if(chunksCreated == maxChunksBeforeGround && !hasGroundSpawned)
+        if (chunksCreated == maxChunksBeforeGround && !hasGroundSpawned)
         {
             CreateGroundChunk();
             hasGroundSpawned = true;
@@ -56,7 +56,7 @@ public class ShuffleBag : MonoBehaviour
 
         //Debug.Log(loadedChunks.Count);
 
-        if(!hasSHolderCreated)
+        if (!hasSHolderCreated)
         {
             hasSHolderCreated = true;
             CreateSpeedHolder();
@@ -93,7 +93,7 @@ public class ShuffleBag : MonoBehaviour
     {
         int randChunk = RandomChunkNum();
         loadedChunks.Add(chunksArray[randChunk]);
-          
+
         GameObject chunk = Instantiate(chunksArray[randChunk], new Vector3(0, yPos, 0), Quaternion.identity);
 
         chunk.AddComponent<SceneMover>();
@@ -133,6 +133,4 @@ public class ShuffleBag : MonoBehaviour
     {
         return gameObject.GetComponent<SceneMover>().currentSpeed;
     }
-
-    //todo: check whether the player is going too fast, if he is then hits the ground, he dies.
 }
