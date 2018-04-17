@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour {
     private Touch touchControls;
     // Get instance of GameController
     private GameController gameController;
-
+    // Fuel slider
     public Slider fuelSlider;
 
     private bool ifMoving = false;
@@ -41,19 +41,15 @@ public class PlayerController : MonoBehaviour {
         touchControls = gameManager.GetComponent<Touch>();
         // Get instance of GameController
         gameController = gameManager.GetComponent<GameController>();
-
+        // Set fuel amount
         GameManager.fuel = 0.0f;
     }
 
     // Update is called once per frame
     void Update ()
     {
+        // Update gauge
         FuelGauge();
-
-        if (Input.GetKeyDown(KeyCode.S))
-        {
-            GameManager.fuel += 0.5f;
-        }
 
         // If the player swipes right
 		if (ifMoving == false && transform.position.x < 2f && (touchControls.SwipeRight == true || Input.GetKeyDown(KeyCode.D)))
@@ -80,6 +76,7 @@ public class PlayerController : MonoBehaviour {
         }
     }
 
+    // Fuel gauge
     void FuelGauge()
     {
         fuelSlider.value = GameManager.fuel;
