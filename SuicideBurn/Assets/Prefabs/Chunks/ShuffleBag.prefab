@@ -79,8 +79,8 @@ MonoBehaviour:
   warningPanel: {fileID: 0}
   speedHolder: {fileID: 1249197794627064, guid: 727cf6cb0d5123d4ea916ade8db0c9da,
     type: 2}
-  riseSpeed: 2
-  slowSpeed: 1
+  riseSpeed: 5.5
+  slowSpeed: 2.5
   slowTime: 1
-  maxChunksBeforeGround: 19
+  maxChunksBeforeGround: 5
   chunksCreated: 0
