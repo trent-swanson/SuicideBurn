@@ -7,7 +7,7 @@ public class PlayerLanding : MonoBehaviour
 {
     public float safeSpeed;
     private bool safelyHitGroundTrigger;
-    private float currentSpeed;
+    public float currentSpeed;
     private GameObject speedHolder;
 
     private void CalcCurrentSpeed()
@@ -26,6 +26,7 @@ public class PlayerLanding : MonoBehaviour
             safelyHitGroundTrigger = false;
             gameObject.GetComponent<Rigidbody>().isKinematic = false;
             gameObject.GetComponent<Rigidbody>().useGravity = true;
+            Destroy(gameObject.GetComponent<PlayerController>());
         }
         else if (other.tag == "GroundTrigger" && currentSpeed <= safeSpeed)
         {

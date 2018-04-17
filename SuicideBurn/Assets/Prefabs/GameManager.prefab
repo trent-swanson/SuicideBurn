@@ -56,6 +56,7 @@ MonoBehaviour:
   gameoverPanel: {fileID: 0}
   fuelSlider: {fileID: 0}
   scoreText: {fileID: 0}
+  personText: {fileID: 0}
 --- !u!114 &114939957616326356
 MonoBehaviour:
   m_ObjectHideFlags: 1
