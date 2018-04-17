@@ -11,6 +11,8 @@ public class CharacterController : MonoBehaviour {
     private GameObject cameraObject;
 
     private bool ifMoving = false;
+    private bool hasMoved;
+    private float currentHoldTime;
 
     // Player movement speed
     public float moveSpeed;
@@ -20,19 +22,41 @@ public class CharacterController : MonoBehaviour {
 
     [Space]
     [Space]
+    [Header("Effects")]
     public GameObject[] breakThrusters;
     public GameObject accelThruster;
+    public GameObject reenteryEffects;
+    public GameObject reenteryHotEffects;
+    public GameObject airExplosion;
+    public GameObject podMesh;
 
-	void Start ()
-    {
+    [Space]
+    [Space]
+    [Header("Break Movement")]
+    public float holdTime;
+    public float minYShift;
+    public float breakTime;
+    public float accelerateTime;
+    public AnimationCurve breakCurve;
+    public AnimationCurve accelerateCurve;
+
+    private float originalYPos;
+    private float minYPos;
+
+    bool dead = false;
+
+	void Start () {
         gameManager = GameObject.FindGameObjectWithTag("GameController");
         cameraObject = GameObject.FindGameObjectWithTag("MainCamera");
         touchControls = gameManager.GetComponent<Touch>();
         airBreaksAnimator = transform.GetChild(0).GetChild(1).GetComponent<Animator>();
+        originalYPos = transform.position.y;
+        minYPos = transform.position.y + minYShift;
     }
 	
-	void Update ()
-    {
+	void Update () {
+        CheckHeld();
+
         //move left & right
 		if (ifMoving == false && transform.position.x < lanePos && (touchControls.SwipeRight == true || Input.GetKeyDown(KeyCode.D))) {
             StartCoroutine(MoveToPosition(new Vector3(transform.position.x + lanePos, transform.position.y, transform.position.z), moveSpeed));
@@ -42,23 +66,29 @@ public class CharacterController : MonoBehaviour {
         }
 
         //break & accelorate
-        if (Input.GetKey(KeyCode.W) || touchControls.Hold) {
+        if (Input.GetKey(KeyCode.W) || touchControls.Hold & !dead) {
             airBreaksAnimator.SetBool("airBreaks", true);
+            reenteryHotEffects.SetActive(false);
             accelThruster.SetActive(false);
             foreach (GameObject thruster in breakThrusters) {
                 thruster.SetActive(true);
             }
-        } else {
+        } else if (!dead) {
             airBreaksAnimator.SetBool("airBreaks", false);
+            reenteryHotEffects.SetActive(true);
             accelThruster.SetActive(true);
             foreach (GameObject thruster in breakThrusters) {
                 thruster.SetActive(false);
             }
         }
+
+        //Debugging
+        if(Input.GetKeyDown(KeyCode.Space)) {
+            AirExplode();
+        }
     }
 
-    public IEnumerator MoveToPosition(Vector3 position, float timeToMove)
-    {
+    public IEnumerator MoveToPosition(Vector3 position, float timeToMove) {
         ifMoving = true;
         Vector3 currentPos = transform.position;
         float t = 0f;
@@ -69,5 +99,51 @@ public class CharacterController : MonoBehaviour {
             yield return null;
         }
         ifMoving = false;
+    }
+
+    private void CheckHeld() {
+        if (touchControls.Hold) {
+            currentHoldTime += Time.deltaTime;
+
+            if(currentHoldTime >= holdTime && hasMoved == false) {
+                hasMoved = true;
+                StopAllCoroutines();
+                StartCoroutine(BreakMove(new Vector3(transform.position.x, minYPos, transform.position.z), breakTime, breakCurve));
+                currentHoldTime = 0f;
+            }
+        } else {
+            currentHoldTime = 0f;
+
+            if (hasMoved) {
+                hasMoved = false;
+                StopAllCoroutines();
+                StartCoroutine(BreakMove(new Vector3(transform.position.x, originalYPos, transform.position.z), accelerateTime, accelerateCurve));
+            }
+        }
+    }
+
+    private IEnumerator BreakMove(Vector3 position, float lerpTIme, AnimationCurve curve) {
+        float t = 0f;
+        Vector3 startPostion = transform.position;
+
+        while (t <= lerpTIme) {
+            t += Time.deltaTime;
+
+            transform.position = Vector3.LerpUnclamped(startPostion, position, curve.Evaluate(t / breakTime));
+
+            yield return null;
+        }
+    }
+
+    public void AirExplode() {
+        dead = true;
+        airExplosion.SetActive(true);
+        podMesh.SetActive(false);
+        reenteryEffects.SetActive(false);
+
+    }
+
+    public void Die() {
+
     }
 }

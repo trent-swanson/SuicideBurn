@@ -40,7 +40,7 @@ public class ShuffleBag : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(chunksCreated);
+        //Debug.Log(chunksCreated);
         if(chunksCreated == maxChunksBeforeGround && !hasGroundSpawned)
         {
             CreateGroundChunk();
