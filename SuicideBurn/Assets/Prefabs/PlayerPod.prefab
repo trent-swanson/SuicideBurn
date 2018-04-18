@@ -2543,6 +2543,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   safeSpeed: 3
   currentSpeed: 0
+  groundExplosion: {fileID: 0}
 --- !u!114 &114435651204623308
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2621,7 +2622,7 @@ MonoBehaviour:
   fuelCost: 50
   holdTime: 0.1
   minYShift: 2
-  breakTime: 0.3
+  breakTime: 0.5
   accelerateTime: 1
   breakCurve:
     serializedVersion: 2
@@ -2631,6 +2632,12 @@ MonoBehaviour:
       value: 0
       inSlope: 0
       outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 0.73665744
+      value: 1.1517335
+      inSlope: 0.10277354
+      outSlope: 0.10277354
       tangentMode: 0
     - serializedVersion: 2
       time: 1

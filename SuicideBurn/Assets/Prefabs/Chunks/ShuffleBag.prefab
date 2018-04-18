@@ -82,5 +82,5 @@ MonoBehaviour:
   riseSpeed: 6
   slowSpeed: 2
   slowTime: 1
-  maxChunksBeforeGround: 5
+  maxChunksBeforeGround: 30
   chunksCreated: 0
