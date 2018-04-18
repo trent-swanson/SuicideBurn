@@ -53,7 +53,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pausePanel: {fileID: 0}
-  gameoverPanel: {fileID: 0}
+  victoryPanel: {fileID: 0}
   fuelSlider: {fileID: 0}
   scoreText: {fileID: 0}
   personText: {fileID: 0}

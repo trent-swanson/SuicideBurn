@@ -164,7 +164,7 @@ public class CharacterController : MonoBehaviour {
     }
 
     IEnumerator Die() {
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(3);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 

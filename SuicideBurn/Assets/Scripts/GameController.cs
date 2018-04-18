@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour {
 
 	public GameObject pausePanel;
-    public GameObject gameoverPanel;
+    public GameObject victoryPanel;
 	public Slider fuelSlider;
 	public Text scoreText;
     public Text personText;
@@ -44,12 +45,18 @@ public class GameController : MonoBehaviour {
         }
     }
 
-    public void GameOver() {
-        gameoverPanel.SetActive(true);
+    public void Victory() {
+        victoryPanel.SetActive(true);
+        Time.timeScale = 0;
     }
 
 	public void Exit() {
 		Application.Quit();
+	}
+
+    public void RestartLevel() {
+        Time.timeScale = 1;
+		SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 	}
 
 	void UpdateFuel() {
@@ -64,4 +71,7 @@ public class GameController : MonoBehaviour {
     {
         personText.text = GameManager.personCount.ToString();
     }
+
+    //remove
+    public void GameOver() {    }
 }

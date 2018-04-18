@@ -218,6 +218,11 @@ Prefab:
       objectReference: {fileID: 1431544057}
     - target: {fileID: 114302307876849936, guid: 57ceea1d8bcc1e54f9a0142322480fdb,
         type: 2}
+      propertyPath: victoryPanel
+      value: 
+      objectReference: {fileID: 1218895566}
+    - target: {fileID: 114302307876849936, guid: 57ceea1d8bcc1e54f9a0142322480fdb,
+        type: 2}
       propertyPath: fuelSlider
       value: 
       objectReference: {fileID: 1920910964}
@@ -634,6 +639,11 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 399613915}
+    - target: {fileID: 114097622119548684, guid: 105a7f487e2538d45b0ac0dd650c90ed,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 399613915}
     - target: {fileID: 114473825267502468, guid: 105a7f487e2538d45b0ac0dd650c90ed,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -692,6 +702,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 105a7f487e2538d45b0ac0dd650c90ed, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1218895566 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1468032398687676, guid: 105a7f487e2538d45b0ac0dd650c90ed,
+    type: 2}
+  m_PrefabInternal: {fileID: 1218895565}
 --- !u!1 &1431544057 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1839142900412284, guid: 105a7f487e2538d45b0ac0dd650c90ed,
