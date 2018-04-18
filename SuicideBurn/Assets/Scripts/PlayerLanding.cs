@@ -6,9 +6,18 @@ using UnityEngine;
 public class PlayerLanding : MonoBehaviour
 {
     public float safeSpeed;
-    private bool safelyHitGroundTrigger;
     public float currentSpeed;
+    //public GameObject airExplosion;
+    public GameObject groundExplosion;
+
+    private GameController gameController;
+    private bool safelyHitGroundTrigger;
     private GameObject speedHolder;
+
+    private void Start()
+    {
+        gameController = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
+    }
 
     private void CalcCurrentSpeed()
     {
@@ -26,7 +35,7 @@ public class PlayerLanding : MonoBehaviour
             safelyHitGroundTrigger = false;
             gameObject.GetComponent<Rigidbody>().isKinematic = false;
             gameObject.GetComponent<Rigidbody>().useGravity = true;
-            Destroy(gameObject.GetComponent<PlayerController>());
+            gameObject.GetComponent<CharacterController>().enabled = false;
         }
         else if (other.tag == "GroundTrigger" && currentSpeed <= safeSpeed)
         {
@@ -37,20 +46,30 @@ public class PlayerLanding : MonoBehaviour
 
         if (other.tag == "Ground" && !safelyHitGroundTrigger)
         {
-
-
-            // play explode animation
-            // game over
-            //Destroy(gameObject.GetComponent<MeshRenderer>());
-            transform.GetComponent<CharacterController>().GroundExplode();
-            
+            // Explode
+            GroundExplode();   
         }
 
         else if(other.tag == "Ground"  && safelyHitGroundTrigger)
         {
             // land safely
             GameManager.UpdatePersonCount(1);
-        }
-        //charactercontroller(groundexplosion)   
+            gameController.VictoryPanel();
+            
+        }  
+    }
+
+    public void GroundExplode()
+    {
+        //dead = true;
+        groundExplosion.SetActive(true);
+        //podMesh.SetActive(false);
+        //reenteryEffects.SetActive(false);
+        StartCoroutine(Die());
+    }
+    IEnumerator Die()
+    {
+        yield return new WaitForSeconds(5);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

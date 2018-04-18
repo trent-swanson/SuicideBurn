@@ -8,16 +8,14 @@ public class SceneMover : MonoBehaviour
 
 
     public GameObject gameManager;
-
     // speed that it rises.
     [Tooltip("This is the speed that the world rises by.")]
     public float riseSpeed = 2;
     public float slowSpeed = 1;
     public float slowTime = 1;
-
     public float currentSpeed;
-
     public bool isSlowing;
+
     private bool hasSlowed;
 
     // Use this for initialization
@@ -33,14 +31,14 @@ public class SceneMover : MonoBehaviour
     void Update()
     {
 
-        if (gameManager.GetComponent<Touch>().Hold && isSlowing == false && currentSpeed != slowSpeed)
+        if (gameManager.GetComponent<Touch>() != null && gameManager.GetComponent<Touch>().Hold && isSlowing == false && currentSpeed != slowSpeed)
         {
             hasSlowed = true;
             isSlowing = true;
             StopAllCoroutines();
             StartCoroutine(SpeedScale(slowSpeed));
         }
-        else if (gameManager.GetComponent<Touch>().Hold == false)
+        else if (gameManager.GetComponent<Touch>() != null && gameManager.GetComponent<Touch>().Hold == false)
         {
             if (hasSlowed)
             {
