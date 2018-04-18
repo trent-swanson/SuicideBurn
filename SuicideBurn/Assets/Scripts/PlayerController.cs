@@ -43,6 +43,7 @@ public class PlayerController : MonoBehaviour {
         gameController = gameManager.GetComponent<GameController>();
         // Set fuel amount
         GameManager.fuel = 0.0f;
+
     }
 
     // Update is called once per frame

@@ -23,6 +23,5 @@ public static class GameManager {
 	public static void UpdatePersonCount(int amount) {
 		personCount += amount;
 		OnUpdatePersonCount();
-		SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 	}
 }
