@@ -45,7 +45,7 @@ public class GameController : MonoBehaviour {
         }
     }
 
-    public void Victory() {
+    public void VictoryPanel() {
         victoryPanel.SetActive(true);
         Time.timeScale = 0;
     }
