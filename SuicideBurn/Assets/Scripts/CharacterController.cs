@@ -153,6 +153,7 @@ public class CharacterController : MonoBehaviour {
         podMesh.SetActive(false);
         reenteryEffects.SetActive(false);
         StartCoroutine(Die());
+        AudioManager.PlaySound("ExplodeClip");
     }
 
     public void GroundExplode() {
@@ -161,6 +162,7 @@ public class CharacterController : MonoBehaviour {
         podMesh.SetActive(false);
         reenteryEffects.SetActive(false);
         StartCoroutine(Die());
+        AudioManager.PlaySound("ExplodeClip");
     }
 
     IEnumerator Die() {

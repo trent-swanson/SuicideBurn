@@ -319,6 +319,7 @@ MonoBehaviour:
   gameoverPanel: {fileID: 0}
   fuelSlider: {fileID: 1920910964}
   scoreText: {fileID: 717250286}
+  personText: {fileID: 0}
 --- !u!114 &717250286 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114183873025498632, guid: 105a7f487e2538d45b0ac0dd650c90ed,
@@ -553,7 +554,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 1bbdc46d3e2b6c54097221636fdc1f10, type: 3}
+  m_audioClip: {fileID: 8300000, guid: e600e50c3650e6a438239455d6a355c9, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
