@@ -33,11 +33,14 @@ public class ShuffleBag : MonoBehaviour
     public int chunksCreated = 0;
 
     //public GameObject chunkParent;
+    private HeightBar heightBar;
 
     //private int chunkCount;
     // Use this for initialization
     void Start()
     {
+        heightBar = FindObjectOfType<HeightBar>();
+
         // create first chunk
         CreateNewChunk(0);
         CreateNewChunk(10);
@@ -102,6 +105,8 @@ public class ShuffleBag : MonoBehaviour
         chunk.AddComponent<TopDestroyer>();
         chunk.GetComponent<TopDestroyer>().shuffleBag = GameObject.Find("ShuffleBag");
         ++chunksCreated;
+
+        heightBar.AdjustSlider();
     }
 
     private void CreateGroundChunk()
