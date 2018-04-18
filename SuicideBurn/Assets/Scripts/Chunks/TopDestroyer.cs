@@ -13,12 +13,6 @@ public class TopDestroyer : MonoBehaviour
     {
         isCollidingwithDestroyer = false;
 	}
-	
-	// Update is called once per frame
-	void Update ()
-    {
-        //Debug.Log(isCollidingwithDestroyer);
-	}
 
     private void OnTriggerEnter(Collider other)
     {
