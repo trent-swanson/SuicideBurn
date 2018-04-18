@@ -250,7 +250,7 @@ GameObject:
   - component: {fileID: 803005950}
   - component: {fileID: 803005949}
   m_Layer: 0
-  m_Name: Directional Light
+  m_Name: Directional Light Purple
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -706,7 +706,7 @@ GameObject:
   - component: {fileID: 1691382852}
   - component: {fileID: 1691382851}
   m_Layer: 0
-  m_Name: Directional Light (1)
+  m_Name: Directional Light Blue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
