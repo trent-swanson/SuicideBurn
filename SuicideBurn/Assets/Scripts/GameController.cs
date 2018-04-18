@@ -47,6 +47,7 @@ public class GameController : MonoBehaviour {
 
     public void VictoryPanel() {
         victoryPanel.SetActive(true);
+        victoryPanel.transform.GetChild(1).GetComponent<Text>().text = GameManager.personCount.ToString();
         Time.timeScale = 0;
     }
 
