@@ -8,6 +8,7 @@ public class CharacterController : MonoBehaviour {
     private GameObject gameManager;
     private Touch touchControls;
     Animator airBreaksAnimator;
+    AudioSource podAudioSource;
 
     private GameObject cameraObject;
 
@@ -54,6 +55,7 @@ public class CharacterController : MonoBehaviour {
         cameraObject = GameObject.FindGameObjectWithTag("MainCamera");
         touchControls = gameManager.GetComponent<Touch>();
         airBreaksAnimator = transform.GetChild(0).GetChild(1).GetComponent<Animator>();
+        podAudioSource = GetComponent<AudioSource>();
         originalYPos = transform.position.y;
         minYPos = transform.position.y + minYShift;
     }
@@ -76,6 +78,7 @@ public class CharacterController : MonoBehaviour {
             airBreaksAnimator.SetBool("airBreaks", true);
             reenteryHotEffects.SetActive(false);
             accelThruster.SetActive(false);
+            podAudioSource.volume = 1;
             foreach (GameObject thruster in breakThrusters) {
                 thruster.SetActive(true);
             }
@@ -83,6 +86,7 @@ public class CharacterController : MonoBehaviour {
             airBreaksAnimator.SetBool("airBreaks", false);
             reenteryHotEffects.SetActive(true);
             accelThruster.SetActive(true);
+            podAudioSource.volume = 0.45f;
             foreach (GameObject thruster in breakThrusters) {
                 thruster.SetActive(false);
             }
@@ -164,7 +168,7 @@ public class CharacterController : MonoBehaviour {
     }
 
     IEnumerator Die() {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(2);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
