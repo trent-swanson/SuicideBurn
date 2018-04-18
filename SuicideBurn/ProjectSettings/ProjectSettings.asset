@@ -41,8 +41,8 @@ PlayerSettings:
   m_SplashScreenLogos: []
   m_VirtualRealitySplashScreen: {fileID: 0}
   m_HolographicTrackingLossScreen: {fileID: 0}
-  defaultScreenWidth: 1024
-  defaultScreenHeight: 768
+  defaultScreenWidth: 400
+  defaultScreenHeight: 600
   defaultScreenWidthWeb: 960
   defaultScreenHeightWeb: 600
   m_StereoRenderingPath: 0
@@ -53,7 +53,7 @@ PlayerSettings:
   androidShowActivityIndicatorOnLoading: -1
   tizenShowActivityIndicatorOnLoading: -1
   iosAppInBackgroundBehavior: 0
-  displayResolutionDialog: 1
+  displayResolutionDialog: 0
   iosAllowHTTPDownload: 1
   allowedAutorotateToPortrait: 1
   allowedAutorotateToPortraitUpsideDown: 1
@@ -64,9 +64,9 @@ PlayerSettings:
   preserveFramebufferAlpha: 0
   disableDepthAndStencilBuffers: 0
   androidBlitType: 0
-  defaultIsFullScreen: 1
-  defaultIsNativeResolution: 1
-  macRetinaSupport: 1
+  defaultIsFullScreen: 0
+  defaultIsNativeResolution: 0
+  macRetinaSupport: 0
   runInBackground: 0
   captureSingleScreen: 0
   muteOtherAudioSources: 0
@@ -121,10 +121,10 @@ PlayerSettings:
   wiiUAllowScreenCapture: 1
   wiiUControllerCount: 0
   m_SupportedAspectRatios:
-    4:3: 1
-    5:4: 1
-    16:10: 1
-    16:9: 1
+    4:3: 0
+    5:4: 0
+    16:10: 0
+    16:9: 0
     Others: 1
   bundleVersion: 0.1
   preloadedAssets: []
@@ -258,7 +258,39 @@ PlayerSettings:
     banner: {fileID: 0}
   androidGamepadSupportLevel: 0
   resolutionDialogBanner: {fileID: 0}
-  m_BuildTargetIcons: []
+  m_BuildTargetIcons:
+  - m_BuildTarget: Android
+    m_Icons:
+    - serializedVersion: 2
+      m_Icon: {fileID: 2800000, guid: aee0fab2fb60c234298894d7e49bac16, type: 3}
+      m_Width: 192
+      m_Height: 192
+      m_Kind: 0
+    - serializedVersion: 2
+      m_Icon: {fileID: 0}
+      m_Width: 144
+      m_Height: 144
+      m_Kind: 0
+    - serializedVersion: 2
+      m_Icon: {fileID: 0}
+      m_Width: 96
+      m_Height: 96
+      m_Kind: 0
+    - serializedVersion: 2
+      m_Icon: {fileID: 0}
+      m_Width: 72
+      m_Height: 72
+      m_Kind: 0
+    - serializedVersion: 2
+      m_Icon: {fileID: 0}
+      m_Width: 48
+      m_Height: 48
+      m_Kind: 0
+    - serializedVersion: 2
+      m_Icon: {fileID: 0}
+      m_Width: 36
+      m_Height: 36
+      m_Kind: 0
   m_BuildTargetBatching: []
   m_BuildTargetGraphicsAPIs: []
   m_BuildTargetVRSettings: []

@@ -313,7 +313,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1026489893157908}
   m_LocalRotation: {x: -0.4557131, y: 0.80267453, z: 0.19503024, w: -0.33166614}
-  m_LocalPosition: {x: -0.089999974, y: 2.56, z: 0.012459445}
+  m_LocalPosition: {x: 1.9100001, y: 1.59, z: 0.012459445}
   m_LocalScale: {x: 0.005599727, y: 0.005599727, z: 0.005599727}
   m_Children: []
   m_Father: {fileID: 4204422501927024}
@@ -339,7 +339,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1773899472802854}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.08, y: 2.63, z: 0}
+  m_LocalPosition: {x: 0.92, y: 1.77, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4204422501927024}
@@ -352,7 +352,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1870326774622644}
   m_LocalRotation: {x: -0.4557131, y: 0.80267453, z: 0.19503024, w: -0.33166614}
-  m_LocalPosition: {x: -0.96, y: 3.1, z: 0.012459}
+  m_LocalPosition: {x: 0.84, y: 2.13, z: 0.012459}
   m_LocalScale: {x: 0.0010636433, y: 0.0010636428, z: 0.001063643}
   m_Children: []
   m_Father: {fileID: 4204422501927024}
@@ -365,7 +365,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1622141291821942}
   m_LocalRotation: {x: -0.29399386, y: 0.87236625, z: 0.30387974, w: 0.24536061}
-  m_LocalPosition: {x: -1.59, y: 2.45, z: 0}
+  m_LocalPosition: {x: 0.40999997, y: 1.4800001, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4204422501927024}
@@ -485,7 +485,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1639232305381468}
   m_LocalRotation: {x: -0.23883268, y: -0.96141744, z: 0.11524437, w: -0.07317225}
-  m_LocalPosition: {x: -2.159, y: 2.92, z: 0.09334042}
+  m_LocalPosition: {x: -0.15899992, y: 1.9500002, z: 0.09334042}
   m_LocalScale: {x: 0.005599727, y: 0.005599727, z: 0.005599727}
   m_Children: []
   m_Father: {fileID: 4204422501927024}
